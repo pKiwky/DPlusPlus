@@ -6,22 +6,22 @@
 
 namespace DPlusPlus {
 
-	void ReadyEventArgs::Execute(DiscordClient *discordClient, const nJson &json) {
+	void ReadyEventArgs::Execute(DiscordClient *client, const nJson &json) {
 		GatewayVersion = json["v"];
 
 		SessionId = json["session_id"];
 		// Cache session id in client object.
-		discordClient->SetSession(SessionId);
+		client->SetSession(SessionId);
 
 		for(nJson guild : json["guilds"]) {
 			Guilds.push_back(guild["id"]);
 		}
 
-		User = std::make_shared<DiscordUser>(discordClient, json["user"]);
-		Application = std::make_shared<DiscordApplication>(discordClient, json["application"]);
+		User = std::make_shared<DiscordUser>(client, json["user"]);
+		Application = std::make_shared<DiscordApplication>(client, json["application"]);
 
 		auto args = std::make_unique<const ReadyEventArgs>(*this);
-		std::thread(&DiscordClient::OnReady, discordClient, std::move(args)).detach();
+		std::thread(&DiscordClient::OnReady, client, std::move(args)).detach();
 	}
 
 }

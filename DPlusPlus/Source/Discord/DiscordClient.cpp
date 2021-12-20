@@ -6,7 +6,8 @@ namespace DPlusPlus {
 
 	const std::map<std::string, Event *> EventsMap = {
 		{ "READY"			, new ReadyEventArgs()			},
-		{ "MESSAGE_CREATE"	, new MessageCreateEventArgs()	}
+		{ "MESSAGE_CREATE"	, new MessageCreateEventArgs()	},
+		{ "GUILD_CREATE"	, new GuildCreateEventArgs()	}
 	};
 
 	DiscordClient::DiscordClient() {}
@@ -64,7 +65,7 @@ namespace DPlusPlus {
 		json["op"] = (int8_t)OPType::kIdentify;
 		json["d"] = {
 			{"token", m_Token},
-			{"intents", 512},
+			{"intents", 513},
 			{"properties", {
 				{"$os", "Windows"},
 				{"$browser", "DPlusPlus"},

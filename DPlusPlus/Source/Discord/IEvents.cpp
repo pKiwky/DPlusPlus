@@ -26,7 +26,7 @@ namespace DPlusPlus {
 
 	}
 
-	void IEvents::OnGuildCreate() {
+	void IEvents::OnGuildCreate(std::unique_ptr<const GuildCreateEventArgs> args) {
 
 	}
 

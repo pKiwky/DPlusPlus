@@ -15,7 +15,16 @@ void Bot::OnReady(std::unique_ptr<const DPlusPlus::ReadyEventArgs> args) {
 	DPP_LOG_INFO("[Bot::OnReady] Application id {0}", args->Application->Id);
 }
 
-inline void Bot::OnMessageCreate(std::unique_ptr<const DPlusPlus::MessageCreateEventArgs> args) {
+void Bot::OnMessageCreate(std::unique_ptr<const DPlusPlus::MessageCreateEventArgs> args) {
 	DPP_LOG_INFO("[Bot::OnMessageCreate] User {0}", args->Message->User->Username);
 	DPP_LOG_INFO("[Bot::OnMessageCreate] Content {0}", args->Message->Content);
+
+	if(args->Guild != nullptr) {
+		DPP_LOG_INFO("[Bot::OnMessageCreate] Guild {0}", args->Guild->Name);
+		DPP_LOG_INFO("[Bot::OnMessageCreate] Channel {0}", args->Channel->Name);
+	}
+}
+
+void Bot::OnGuildCreate(std::unique_ptr<const DPlusPlus::GuildCreateEventArgs> args) {
+	DPP_LOG_INFO("[Bot::OnGuildCreate]");
 }

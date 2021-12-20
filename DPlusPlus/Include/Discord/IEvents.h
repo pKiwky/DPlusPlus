@@ -4,6 +4,7 @@
 
 #include "Entities/Common/EventArgs/ReadyEventArgs.h"
 #include "Entities/Message/EventArgs/MessageCreateEventArgs.h"
+#include "Entities/Guild/EventArgs/GuildCreateEventArgs.h"
 
 namespace DPlusPlus {
 
@@ -19,7 +20,7 @@ namespace DPlusPlus {
 
 		/**
 		 * Sent when heartbeat method is called.
-		 * 
+		 *
 		 * @Note: timestamp is the time when method is executed.
 		 */
 		virtual void OnHeartbeat(int32_t timestamp);
@@ -64,7 +65,7 @@ namespace DPlusPlus {
 		 *
 		 * The inner payload is a guild object, with all the extra fields specified.
 		 */
-		virtual void OnGuildCreate();
+		virtual void OnGuildCreate(std::unique_ptr<const GuildCreateEventArgs> args);
 
 		/**
 		 * Sent when a guild is updated. The inner payload is a guild object.

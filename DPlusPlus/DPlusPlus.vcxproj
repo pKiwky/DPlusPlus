@@ -146,6 +146,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Include\Entities\Channel\DiscordChannel.h" />
+    <ClInclude Include="Include\Entities\Guild\EventArgs\GuildCreateEventArgs.h" />
+    <ClInclude Include="Include\Utils\Cache.hpp" />
+    <ClInclude Include="Include\Entities\Guild\DiscordGuild.h" />
     <ClInclude Include="Include\Entities\Message\DiscordMessage.h" />
     <ClInclude Include="Include\Entities\Common\DiscordApplication.h" />
     <ClInclude Include="Include\Discord\DiscordEntity.h" />
@@ -161,6 +165,10 @@
     <ClInclude Include="Vendor\nlohmann\json.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Entities\Channel\DiscordChannel.cpp" />
+    <ClCompile Include="Source\Entities\Guild\EventArgs\GuildCreateEventArgs.cpp" />
+    <ClCompile Include="Source\Utils\Cache.cpp" />
+    <ClCompile Include="Source\Entities\Guild\DiscordGuild.cpp" />
     <ClCompile Include="Source\Entities\Message\DiscordMessage.cpp" />
     <ClCompile Include="Source\Entities\Message\EventArgs\MessageCreateEventArgs.cpp" />
     <ClCompile Include="Source\Entities\Common\DiscordApplication.cpp" />

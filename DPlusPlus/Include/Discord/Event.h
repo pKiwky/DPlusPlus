@@ -14,7 +14,7 @@ namespace DPlusPlus {
 		 *
 		 * @discordClient		Active client instance.
 		 */
-		virtual void Execute(DiscordClient *discordClient, const nJson &json) = 0;
+		virtual void Execute(DiscordClient *client, const nJson &json) = 0;
 
 	};
 

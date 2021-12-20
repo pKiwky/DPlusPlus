@@ -6,18 +6,14 @@
 namespace DPlusPlus {
 
 	class DiscordGuild;
-	class DiscordChannel;
-	class DiscordMessage;
 
-	class MessageCreateEventArgs: public Event {
+	class GuildCreateEventArgs: public Event {
 
 	public:
 		void Execute(DiscordClient *client, const nJson &json);
 
 	public:
 		std::shared_ptr<DiscordGuild> Guild;
-		std::shared_ptr<DiscordChannel> Channel;
-		std::shared_ptr<DiscordMessage> Message;
 
 	};
 

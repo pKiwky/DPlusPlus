@@ -6,6 +6,9 @@
 #include "Discord/IEvents.h"
 #include "Discord/Event.h"
 #include "Utils/Utility.h"
+#include "Utils/Cache.hpp"
+
+#include "Entities/Guild/DiscordGuild.h"
 
 namespace DPlusPlus {
 
@@ -79,6 +82,9 @@ namespace DPlusPlus {
 		 * Used to replay missed events when a disconnected client resumes.
 		 */
 		void ProcessTypeResume();
+
+	public:
+		Cache<DiscordGuild> Guilds;
 
 	private:
 		websocket_callback_client m_Client;

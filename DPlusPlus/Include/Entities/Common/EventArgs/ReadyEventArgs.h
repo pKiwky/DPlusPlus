@@ -11,7 +11,7 @@ namespace DPlusPlus {
 	class ReadyEventArgs: public Event {
 
 	public:
-		void Execute(DiscordClient *discordClient, const nJson &json);
+		void Execute(DiscordClient *client, const nJson &json);
 
 	public:
 		int32_t GatewayVersion;
