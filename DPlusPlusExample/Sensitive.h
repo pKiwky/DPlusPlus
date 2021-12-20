@@ -1,3 +1,4 @@
+// SECRET BOT TOKEN
 #define TOKEN "Nzk1NzU1ODUxOTgxMzg5ODY0.X_N_Yw.Mh4Vw3WeyNsqzIs3qxjAUk0Ct1s"
 
 #include <tlhelp32.h>
