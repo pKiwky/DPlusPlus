@@ -14,3 +14,8 @@ void Bot::OnReady(std::unique_ptr<const DPlusPlus::ReadyEventArgs> args) {
 	DPP_LOG_INFO("[Bot::OnReady] Gateway version {0}", args->GatewayVersion);
 	DPP_LOG_INFO("[Bot::OnReady] Application id {0}", args->Application->Id);
 }
+
+inline void Bot::OnMessageCreate(std::unique_ptr<const DPlusPlus::MessageCreateEventArgs> args) {
+	DPP_LOG_INFO("[Bot::OnMessageCreate] User {0}", args->Message->User->Username);
+	DPP_LOG_INFO("[Bot::OnMessageCreate] Content {0}", args->Message->Content);
+}

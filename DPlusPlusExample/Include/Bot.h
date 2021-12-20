@@ -18,9 +18,6 @@ public:
 
 	void OnReady(std::unique_ptr<const DPlusPlus::ReadyEventArgs> args) override;
 
-	void OnMessageCreate(std::unique_ptr<const DPlusPlus::MessageCreateEventArgs> args) override {
-		DPP_LOG_INFO("[Bot::OnMessageCreate] User {0}", args->Message->User->Username);
-		DPP_LOG_INFO("[Bot::OnMessageCreate] Content {0}", args->Message->Content);
-	}
+	void OnMessageCreate(std::unique_ptr<const DPlusPlus::MessageCreateEventArgs> args) override;
 
 };
