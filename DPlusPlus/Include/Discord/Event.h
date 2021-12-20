@@ -1,0 +1,21 @@
+#pragma once
+
+#include "Utils/Utility.h"
+
+namespace DPlusPlus {
+
+	class DiscordClient;
+
+	class Event {
+
+	public:
+		/**
+		 * Method that will be execute when this event type if executed.
+		 *
+		 * @discordClient		Active client instance.
+		 */
+		virtual void Execute(DiscordClient *discordClient, const nJson &json) = 0;
+
+	};
+
+}
