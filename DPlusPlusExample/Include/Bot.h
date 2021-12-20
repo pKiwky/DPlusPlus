@@ -8,10 +8,6 @@
 #include <Entities/Guild/DiscordGuild.h>
 #include <Entities/Channel/DiscordChannel.h>
 
-#include <Entities/Common/EventArgs/ReadyEventArgs.h>
-#include <Entities/Message/EventArgs/MessageCreateEventArgs.h>
-#include <Entities/Guild/EventArgs/GuildCreateEventArgs.h>
-
 class Bot: public DPlusPlus::DiscordClient {
 
 public:
@@ -19,6 +15,9 @@ public:
 	void OnHeartbeat(int32_t timestamp) override;
 	void OnReady(std::unique_ptr<const DPlusPlus::ReadyEventArgs> args) override;
 	void OnMessageCreate(std::unique_ptr<const DPlusPlus::MessageCreateEventArgs> args) override;
+	void OnMessageDelete(std::unique_ptr<const DPlusPlus::MessageDeleteEventArgs> args) override {
+		DPP_LOG_INFO("[Bot::OnMessageDelete] Content {0}", args->Message->Content);
+	}
 	void OnGuildCreate(std::unique_ptr<const DPlusPlus::GuildCreateEventArgs> args) override;
 
 };

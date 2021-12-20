@@ -7,6 +7,7 @@ namespace DPlusPlus {
 	const std::map<std::string, Event *> EventsMap = {
 		{ "READY"			, new ReadyEventArgs()			},
 		{ "MESSAGE_CREATE"	, new MessageCreateEventArgs()	},
+		{ "MESSAGE_DELETE"	, new MessageDeleteEventArgs()	},
 		{ "GUILD_CREATE"	, new GuildCreateEventArgs()	}
 	};
 

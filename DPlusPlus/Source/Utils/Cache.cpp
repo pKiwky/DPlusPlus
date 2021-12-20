@@ -41,6 +41,18 @@ namespace DPlusPlus {
 		}
 	}
 
+	template <typename T>
+	void Cache<T>::Delete(const Snowflake &id) {
+		std::lock_guard<std::mutex>(*m_Mutex);
+		{
+			auto it = m_Objects.find(id);
+			if(it != m_Objects.end()) {
+				DPP_LOG_DEBUG("[Cache::Delete] {0}", typeid(T).name());
+				m_Objects.erase(it);
+			}
+		}
+	}
+
 	template<typename T>
 	CacheRing<T>::CacheRing(int size):
 		m_Mutex(new std::mutex()), m_Objects(boost::circular_buffer<T>(size)) {
@@ -78,4 +90,18 @@ namespace DPlusPlus {
 			m_Objects.push_back(object);
 		}
 	}
+
+	template<typename T>
+	void CacheRing<T>::Delete(const Snowflake &id) {
+		std::lock_guard<std::mutex>(*m_Mutex);
+		{
+			for(int i = 0; i < m_Objects.size(); i++) {
+				if(m_Objects.at(i).Id == id) {
+					DPP_LOG_DEBUG("[CacheRing::Delete] {0}", typeid(T).name());
+					m_Objects.erase(m_Objects.begin() + i);
+				}
+			}
+		}
+	}
+
 }

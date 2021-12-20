@@ -130,7 +130,7 @@ namespace DPlusPlus {
 
 	}
 
-	void IEvents::OnMessageDelete() {
+	void IEvents::OnMessageDelete(std::unique_ptr<const MessageDeleteEventArgs> args) {
 
 	}
 

@@ -66,6 +66,9 @@
     <ClInclude Include="Include\Entities\Channel\DiscordChannel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Entities\Message\EventArgs\MessageDeleteEventArgs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Discord\DiscordClient.cpp">
@@ -108,6 +111,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\Entities\Channel\DiscordChannel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Entities\Message\EventArgs\MessageDeleteEventArgs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

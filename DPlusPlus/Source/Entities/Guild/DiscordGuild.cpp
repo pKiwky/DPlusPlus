@@ -5,9 +5,7 @@
 
 namespace DPlusPlus {
 
-	DiscordGuild::DiscordGuild() {
-
-	}
+	DiscordGuild::DiscordGuild() {}
 
 	DiscordGuild::DiscordGuild(DiscordClient *client, const nJson &json): DiscordEntity(client) {
 		GetJson(json, "id",								/**/ Id);

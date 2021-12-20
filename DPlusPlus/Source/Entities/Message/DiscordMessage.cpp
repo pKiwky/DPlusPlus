@@ -19,8 +19,7 @@ namespace DPlusPlus {
 
 		std::unique_ptr<DiscordGuild> guild = client->Guilds.Get(GuildId);
 		if(guild != nullptr) {
-			for(int i = 0; i < 10000; i++)
-				guild->Messages->Add(Id, *this);
+			guild->Messages->Add(Id, *this);
 		}
 	}
 

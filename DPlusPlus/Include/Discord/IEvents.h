@@ -4,6 +4,7 @@
 
 #include "Entities/Common/EventArgs/ReadyEventArgs.h"
 #include "Entities/Message/EventArgs/MessageCreateEventArgs.h"
+#include "Entities/Message/EventArgs/MessageDeleteEventArgs.h"
 #include "Entities/Guild/EventArgs/GuildCreateEventArgs.h"
 
 namespace DPlusPlus {
@@ -202,7 +203,7 @@ namespace DPlusPlus {
 		/**
 		 * Sent when a message is deleted.
 		 */
-		virtual void OnMessageDelete();
+		virtual void OnMessageDelete(std::unique_ptr<const MessageDeleteEventArgs> args);
 
 		/**
 		 * Sent when multiple messages are deleted at once.

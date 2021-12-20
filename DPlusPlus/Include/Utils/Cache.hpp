@@ -19,8 +19,28 @@ namespace DPlusPlus {
 		Cache();
 
 	public:
+		/**
+		 * Get value from cache or return nullptr.
+		 *
+		 * @id		Id of object.
+		 * @return	Object refference or nullptr.
+		 */
 		std::unique_ptr<T> Get(const Snowflake &id);
+
+		/**
+		 * Add new object or replace old if already exists.
+		 * 
+		 * @id		Id of object.
+		 * object	Object to add in cache.
+		 */
 		void Add(const Snowflake &id, T object);
+
+		/**
+		 * Try to delete object if exists.
+		 * 
+		 * @id		Id of object.
+		 */
+		void Delete(const Snowflake &id);
 
 	private:
 		std::mutex *m_Mutex;
@@ -35,8 +55,29 @@ namespace DPlusPlus {
 		CacheRing(int size);
 
 	public:
+		/**
+		 * Get value from cache or return nullptr.
+		 *
+		 * @id		Id of object.
+		 * @return	Object refference or nullptr.
+		 */
 		std::unique_ptr<T> Get(const Snowflake &id);
+
+		/**
+		 * Add new object in cache. 
+		 * You can cache multiple objects with same id.
+		 *
+		 * @id		Id of object.
+		 * object	Object to add in cache.
+		 */
 		void Add(const Snowflake &id, T object);
+
+		/**
+		 * Try to delete object if exists.
+		 *
+		 * @id		Id of object.
+		 */
+		void Delete(const Snowflake &id);
 
 	public:
 		std::mutex *m_Mutex;
