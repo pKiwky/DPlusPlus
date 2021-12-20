@@ -10,10 +10,11 @@ namespace DPlusPlus {
 	void MessageCreateEventArgs::Execute(DiscordClient *client, const nJson &json) {
 		Message = std::make_shared<DiscordMessage>(client, json);
 
-		// Message may be in dm, so there will no guild / channel.
+		// Message may be dm, so there will no guild / channel.
 		if(Message->GuildId != "") {
 			Guild = std::move(client->Guilds.Get(Message->GuildId));
 
+			// Safe check.
 			if(Guild != nullptr) {
 				Channel = std::move(Guild->Channels->Get(Message->ChannelId));
 			}

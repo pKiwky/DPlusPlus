@@ -4,8 +4,9 @@
 
 #include "Utils/Logger.h"
 
-#define DISCORD_GATEWAY_URL "wss://gateway.discord.gg/?v=8&encoding=json"
-#define DISCOR_API_URL		"https://discord.com/api/v8"
+#define DISCORD_GATEWAY_URL			"wss://gateway.discord.gg/?v=8&encoding=json"
+#define DISCOR_API_URL				"https://discord.com/api/v8"
+#define DISCORD_MESSAGE_CACHE_SIZE	10
 
 namespace DPlusPlus {
 

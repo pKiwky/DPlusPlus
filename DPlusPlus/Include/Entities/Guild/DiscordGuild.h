@@ -45,6 +45,7 @@ namespace DPlusPlus {
 	};
 
 	class DiscordChannel;
+	class DiscordMessage;
 
 	class DiscordGuild: public DiscordEntity {
 
@@ -54,6 +55,8 @@ namespace DPlusPlus {
 
 	public:
 		Cache<DiscordChannel> *Channels = nullptr;
+
+		CacheRing<DiscordMessage> *Messages = nullptr;
 
 		Snowflake Id;
 		Snowflake OwnerId;

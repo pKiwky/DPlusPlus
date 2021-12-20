@@ -49,6 +49,8 @@ namespace DPlusPlus {
 		GetJson(json, "nsfw_level",						/**/ GuildNSFWLevel);
 
 		Channels = new Cache<DiscordChannel>();
+		Messages = new CacheRing<DiscordMessage>(DISCORD_MESSAGE_CACHE_SIZE);
+
 		for(nJson channel : json["channels"]) {
 			Channels->Add(channel["id"], DiscordChannel(client, channel));
 		}

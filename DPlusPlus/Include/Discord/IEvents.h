@@ -189,6 +189,8 @@ namespace DPlusPlus {
 
 		/**
 		 * Sent when a message is created. The inner payload is a message object.
+		 * 
+		 * Note: Guild / Channel / Member may be null if message is dm.
 		 */
 		virtual void OnMessageCreate(std::unique_ptr<const MessageCreateEventArgs> args);
 

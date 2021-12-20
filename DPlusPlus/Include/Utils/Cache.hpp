@@ -28,4 +28,20 @@ namespace DPlusPlus {
 
 	};
 
+	template<typename T>
+	class CacheRing {
+
+	public:
+		CacheRing(int size);
+
+	public:
+		std::unique_ptr<T> Get(const Snowflake &id);
+		void Add(const Snowflake &id, T object);
+
+	public:
+		std::mutex *m_Mutex;
+		boost::circular_buffer<T> m_Objects;
+
+	};
+
 }

@@ -16,6 +16,12 @@ namespace DPlusPlus {
 		if(json.contains("author")) {
 			User = std::make_shared<DiscordUser>(client, json["author"]);
 		}
+
+		std::unique_ptr<DiscordGuild> guild = client->Guilds.Get(GuildId);
+		if(guild != nullptr) {
+			for(int i = 0; i < 10000; i++)
+				guild->Messages->Add(Id, *this);
+		}
 	}
 
 }

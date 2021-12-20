@@ -10,7 +10,7 @@ namespace DPlusPlus {
 
 	public:
 		/**
-		 * Method that will be execute when this event type if executed.
+		 * Method that will be execute when this event type is executed.
 		 *
 		 * @discordClient		Active client instance.
 		 */
