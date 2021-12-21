@@ -14,7 +14,6 @@ namespace DPlusPlus {
 		if(Message->GuildId != "") {
 			Guild = std::move(client->Guilds.Get(Message->GuildId));
 
-			// Safe check.
 			if(Guild != nullptr) {
 				Channel = std::move(Guild->Channels->Get(Message->ChannelId));
 			}

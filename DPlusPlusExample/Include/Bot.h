@@ -15,8 +15,13 @@ public:
 	void OnHeartbeat(int32_t timestamp) override;
 	void OnReady(std::unique_ptr<const DPlusPlus::ReadyEventArgs> args) override;
 	void OnMessageCreate(std::unique_ptr<const DPlusPlus::MessageCreateEventArgs> args) override;
+	void OnMessageUpdate(std::unique_ptr<const DPlusPlus::MessageUpdateEventArgs> args) override {
+		DPP_LOG_INFO("[Bot::OnMessageUpdate] Content {0}", args->Message->Content);
+	}
 	void OnMessageDelete(std::unique_ptr<const DPlusPlus::MessageDeleteEventArgs> args) override {
-		DPP_LOG_INFO("[Bot::OnMessageDelete] Content {0}", args->Message->Content);
+		if(args->Message != nullptr) {
+			DPP_LOG_INFO("[Bot::OnMessageDelete] Content {0}", args->Message->Content);
+		}
 	}
 	void OnGuildCreate(std::unique_ptr<const DPlusPlus::GuildCreateEventArgs> args) override;
 

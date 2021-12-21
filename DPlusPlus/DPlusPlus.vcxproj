@@ -163,9 +163,11 @@
     <ClInclude Include="Include\Entities\Common\EventArgs\ReadyEventArgs.h" />
     <ClInclude Include="Include\Entities\Message\EventArgs\MessageCreateEventArgs.h" />
     <ClInclude Include="Include\Entities\Message\EventArgs\MessageDeleteEventArgs.h" />
+    <ClInclude Include="Include\Entities\Message\EventArgs\MessageUpdateEventArgs.h" />
     <ClInclude Include="Vendor\nlohmann\json.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Entities\Message\EventArgs\MessageUpdateEventArgs.cpp" />
     <ClCompile Include="Source\Entities\Message\EventArgs\MessageDeleteEventArgs.cpp" />
     <ClCompile Include="Source\Entities\Channel\DiscordChannel.cpp" />
     <ClCompile Include="Source\Entities\Guild\EventArgs\GuildCreateEventArgs.cpp" />

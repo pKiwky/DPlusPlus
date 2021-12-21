@@ -126,7 +126,7 @@ namespace DPlusPlus {
 
 	}
 
-	void IEvents::OnMessageUpdate() {
+	void IEvents::OnMessageUpdate(std::unique_ptr<const MessageUpdateEventArgs> args) {
 
 	}
 

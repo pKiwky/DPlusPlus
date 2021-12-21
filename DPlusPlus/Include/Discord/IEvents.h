@@ -4,6 +4,7 @@
 
 #include "Entities/Common/EventArgs/ReadyEventArgs.h"
 #include "Entities/Message/EventArgs/MessageCreateEventArgs.h"
+#include "Entities/Message/EventArgs/MessageUpdateEventArgs.h"
 #include "Entities/Message/EventArgs/MessageDeleteEventArgs.h"
 #include "Entities/Guild/EventArgs/GuildCreateEventArgs.h"
 
@@ -198,7 +199,7 @@ namespace DPlusPlus {
 		/**
 		 * Sent when a message is updated. The inner payload is a message object.
 		 */
-		virtual void OnMessageUpdate();
+		virtual void OnMessageUpdate(std::unique_ptr<const MessageUpdateEventArgs> args);
 
 		/**
 		 * Sent when a message is deleted.
