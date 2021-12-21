@@ -6,7 +6,7 @@ namespace DPlusPlus {
 
 	}
 
-	void IEvents::OnHeartbeat(int32_t timestamp) {
+	void IEvents::OnHeartbeat(time_t timestamp) {
 
 	}
 

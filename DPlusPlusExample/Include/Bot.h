@@ -12,7 +12,7 @@ class Bot: public DPlusPlus::DiscordClient {
 
 public:
 	void OnHello(int32_t interval) override;
-	void OnHeartbeat(int32_t timestamp) override;
+	void OnHeartbeat(time_t timestamp) override;
 	void OnReady(std::unique_ptr<const DPlusPlus::ReadyEventArgs> args) override;
 	void OnMessageCreate(std::unique_ptr<const DPlusPlus::MessageCreateEventArgs> args) override;
 	void OnMessageUpdate(std::unique_ptr<const DPlusPlus::MessageUpdateEventArgs> args) override {

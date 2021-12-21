@@ -4,7 +4,7 @@ void Bot::OnHello(int32_t interval) {
 	DPP_LOG_INFO("[Bot::OnHello] Interval {0}ms", interval);
 }
 
-void Bot::OnHeartbeat(int32_t timestamp) {
+void Bot::OnHeartbeat(time_t timestamp) {
 	DPP_LOG_INFO("[Bot::OnHeartbeat] Method executed on {0}", timestamp);
 }
 

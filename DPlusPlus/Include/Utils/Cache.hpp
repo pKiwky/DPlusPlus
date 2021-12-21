@@ -29,7 +29,7 @@ namespace DPlusPlus {
 
 		/**
 		 * Add new object or replace old if already exists.
-		 * 
+		 *
 		 * @id		Id of object.
 		 * object	Object to add in cache.
 		 */
@@ -37,13 +37,13 @@ namespace DPlusPlus {
 
 		/**
 		 * Try to delete object if exists.
-		 * 
+		 *
 		 * @id		Id of object.
 		 */
 		void Delete(const Snowflake &id);
 
 	private:
-		std::mutex *m_Mutex;
+		std::mutex m_Mutex;
 		std::unordered_map<Snowflake, T> m_Objects;
 
 	};
@@ -64,7 +64,7 @@ namespace DPlusPlus {
 		std::unique_ptr<T> Get(const Snowflake &id);
 
 		/**
-		 * Add new object in cache. 
+		 * Add new object in cache.
 		 * You can cache multiple objects with same id.
 		 *
 		 * @id		Id of object.
@@ -80,7 +80,7 @@ namespace DPlusPlus {
 		void Delete(const Snowflake &id);
 
 	public:
-		std::mutex *m_Mutex;
+		std::mutex m_Mutex;
 		boost::circular_buffer<T> m_Objects;
 
 	};

@@ -25,7 +25,7 @@ namespace DPlusPlus {
 		 *
 		 * @Note: timestamp is the time when method is executed.
 		 */
-		virtual void OnHeartbeat(int32_t timestamp);
+		virtual void OnHeartbeat(time_t timestamp);
 
 		/**
 		 * The ready event is dispatched when a client has completed the initial handshake with the gateway (for new sessions).
