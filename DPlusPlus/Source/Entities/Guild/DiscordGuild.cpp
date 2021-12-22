@@ -48,6 +48,7 @@ namespace DPlusPlus {
 
 		// LEAK MEMORY ON UPDATE OLD GUILD.
 		Channels = new Cache<DiscordChannel>();
+		Members = new Cache<DiscordMember>();
 		Messages = new CacheRing<DiscordMessage>(DISCORD_MESSAGE_CACHE_SIZE);
 
 		if(json.contains("channels")) {
