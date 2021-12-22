@@ -8,6 +8,14 @@
 #define DISCOR_API_URL				"https://discord.com/api/v8"
 #define DISCORD_MESSAGE_CACHE_SIZE	10
 
+#define DPP_MEASURE_EXECUTION_START(a) \
+	uint64_t start##a = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+
+#define DPP_MEASURE_EXECUTION_END(a) \
+	uint64_t stop##a = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count(); \
+	std::cout << ##a << " - " <<  __FUNCTION__ << " executed in: " << stop##a - start##a << "ms \n";
+
+
 namespace DPlusPlus {
 
 	using nJson = nlohmann::json;

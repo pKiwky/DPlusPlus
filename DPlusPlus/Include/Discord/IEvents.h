@@ -7,6 +7,7 @@
 #include "Entities/Message/EventArgs/MessageUpdateEventArgs.h"
 #include "Entities/Message/EventArgs/MessageDeleteEventArgs.h"
 #include "Entities/Guild/EventArgs/GuildCreateEventArgs.h"
+#include "Entities/Guild/EventArgs/GuildUpdateEventArgs.h"
 
 namespace DPlusPlus {
 
@@ -72,7 +73,7 @@ namespace DPlusPlus {
 		/**
 		 * Sent when a guild is updated. The inner payload is a guild object.
 		 */
-		virtual void OnGuildUpdate();
+		virtual void OnGuildUpdate(std::unique_ptr<const GuildUpdateEventArgs> args);
 
 		/**
 		 * Sent when a guild becomes or was already unavailable due to an outage, or when the user leaves or is removed from a guild.

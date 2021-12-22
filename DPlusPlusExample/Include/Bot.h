@@ -4,6 +4,7 @@
 
 #include <Entities/Common/DiscordApplication.h>
 #include <Entities/Member/DiscordUser.h>
+#include <Entities/Member/DiscordMember.h>
 #include <Entities/Message/DiscordMessage.h>
 #include <Entities/Guild/DiscordGuild.h>
 #include <Entities/Channel/DiscordChannel.h>
@@ -27,5 +28,8 @@ public:
 		}
 	}
 	void OnGuildCreate(std::unique_ptr<const DPlusPlus::GuildCreateEventArgs> args) override;
+	void OnGuildUpdate(std::unique_ptr<const DPlusPlus::GuildUpdateEventArgs> args) override {
+		DPP_LOG_INFO("[Bot::OnGuildUpdate] Name {0}", args->Guild->Name);
+	}
 
 };

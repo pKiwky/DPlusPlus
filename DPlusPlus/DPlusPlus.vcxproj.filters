@@ -72,6 +72,12 @@
     <ClInclude Include="Include\Entities\Message\EventArgs\MessageUpdateEventArgs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Entities\Guild\EventArgs\GuildUpdateEventArgs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Entities\Member\DiscordMember.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Discord\DiscordClient.cpp">
@@ -120,6 +126,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\Entities\Message\EventArgs\MessageUpdateEventArgs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Entities\Guild\EventArgs\GuildUpdateEventArgs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Entities\Member\DiscordMember.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

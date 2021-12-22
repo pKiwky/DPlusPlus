@@ -8,6 +8,7 @@ namespace DPlusPlus {
 	class DiscordGuild;
 	class DiscordChannel;
 	class DiscordMessage;
+	class DiscordMember;
 
 	class MessageCreateEventArgs: public Event {
 
@@ -18,6 +19,7 @@ namespace DPlusPlus {
 		std::shared_ptr<DiscordGuild> Guild;
 		std::shared_ptr<DiscordChannel> Channel;
 		std::shared_ptr<DiscordMessage> Message;
+		std::shared_ptr<DiscordMember> Member;
 
 	};
 

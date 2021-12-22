@@ -22,6 +22,7 @@ void Bot::OnMessageCreate(std::unique_ptr<const DPlusPlus::MessageCreateEventArg
 	if(args->Guild != nullptr) {
 		DPP_LOG_INFO("[Bot::OnMessageCreate] Guild {0}", args->Guild->Name);
 		DPP_LOG_INFO("[Bot::OnMessageCreate] Channel {0}", args->Channel->Name);
+		DPP_LOG_INFO("[Bot::OnMessageCreate] Member {0}", args->Member->Nick);
 	}
 }
 

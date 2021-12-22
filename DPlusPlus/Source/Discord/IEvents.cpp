@@ -30,7 +30,7 @@ namespace DPlusPlus {
 
 	}
 
-	void IEvents::OnGuildUpdate() {
+	void IEvents::OnGuildUpdate(std::unique_ptr<const GuildUpdateEventArgs> args) {
 
 	}
 

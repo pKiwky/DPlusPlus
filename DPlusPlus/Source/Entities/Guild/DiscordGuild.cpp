@@ -46,11 +46,14 @@ namespace DPlusPlus {
 		GetJson(json, "premium_tier",					/**/ GuildPremiumTier);
 		GetJson(json, "nsfw_level",						/**/ GuildNSFWLevel);
 
+		// LEAK MEMORY ON UPDATE OLD GUILD.
 		Channels = new Cache<DiscordChannel>();
 		Messages = new CacheRing<DiscordMessage>(DISCORD_MESSAGE_CACHE_SIZE);
 
-		for(nJson channel : json["channels"]) {
-			Channels->Add(channel["id"], DiscordChannel(client, channel));
+		if(json.contains("channels")) {
+			for(nJson channel : json["channels"]) {
+				Channels->Add(channel["id"], DiscordChannel(client, channel));
+			}
 		}
 
 		client->Guilds.Add(Id, *this);
