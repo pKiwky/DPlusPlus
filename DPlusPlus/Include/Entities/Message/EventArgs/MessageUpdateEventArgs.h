@@ -18,6 +18,7 @@ namespace DPlusPlus {
 		std::shared_ptr<DiscordGuild> Guild;
 		std::shared_ptr<DiscordChannel> Channel;
 		std::shared_ptr<DiscordMessage> Message;
+		std::shared_ptr<DiscordMessage> OldMessage;
 
 	};
 

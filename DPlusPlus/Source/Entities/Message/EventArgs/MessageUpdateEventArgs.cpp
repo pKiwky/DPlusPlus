@@ -16,7 +16,11 @@ namespace DPlusPlus {
 			if(Guild != nullptr) {
 				Channel = Guild->Channels->Get(json["channel_id"]);
 
-				Guild->Messages->Delete(Message->Id);
+				OldMessage = Guild->Messages->Get(Message->Id);
+				if(OldMessage != nullptr) {
+					Guild->Messages->Delete(Message->Id);
+				}
+
 				Guild->Messages->Add(Message->Id, *Message);
 			}
 		}

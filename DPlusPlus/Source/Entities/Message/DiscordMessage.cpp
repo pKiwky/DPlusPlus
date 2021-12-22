@@ -17,10 +17,11 @@ namespace DPlusPlus {
 			User = std::make_shared<DiscordUser>(client, json["author"]);
 		}
 
-		std::unique_ptr<DiscordGuild> guild = client->Guilds.Get(GuildId);
+		// DO IN MessageUpdateEventArgs
+		/*std::unique_ptr<DiscordGuild> guild = client->Guilds.Get(GuildId);
 		if(guild != nullptr) {
 			guild->Messages->Add(Id, *this);
-		}
+		}*/
 	}
 
 }

@@ -16,6 +16,9 @@ public:
 	void OnReady(std::unique_ptr<const DPlusPlus::ReadyEventArgs> args) override;
 	void OnMessageCreate(std::unique_ptr<const DPlusPlus::MessageCreateEventArgs> args) override;
 	void OnMessageUpdate(std::unique_ptr<const DPlusPlus::MessageUpdateEventArgs> args) override {
+		if(args->OldMessage != nullptr) {
+			DPP_LOG_INFO("[Bot::OnMessageUpdate] Old content {0}", args->OldMessage->Content);
+		}
 		DPP_LOG_INFO("[Bot::OnMessageUpdate] Content {0}", args->Message->Content);
 	}
 	void OnMessageDelete(std::unique_ptr<const DPlusPlus::MessageDeleteEventArgs> args) override {
