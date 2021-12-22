@@ -30,7 +30,6 @@ namespace DPlusPlus {
 			}
 		}
 
-
 		auto args = std::make_unique<const MessageCreateEventArgs>(*this);
 		std::thread(&DiscordClient::OnMessageCreate, client, std::move(args)).detach();
 	}
