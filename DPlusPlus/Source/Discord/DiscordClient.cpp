@@ -95,6 +95,8 @@ namespace DPlusPlus {
 	}
 
 	void DiscordClient::ProcessTypeHello(const nJson &json) {
+		DPP_LOG_DEBUG("[DiscordClient::ProcessTypeHello] Main method");
+
 		nJson data = json["d"];
 		m_HeartbeatInterval = (int32_t)data["heartbeat_interval"];
 		m_IsReady = true;
@@ -112,20 +114,22 @@ namespace DPlusPlus {
 					DPP_LOG_DEBUG("[DiscordClient::ProcessTypeHello] Process client heartbeat");
 
 					websocket_outgoing_message msg;
-					nJson jsonMsg;
+					nJson json;
 
-					jsonMsg["op"] == (int)OPType::kHeartbeat;
-					jsonMsg["d"] = m_LastSignal;
+					json["op"] = (int)OPType::kHeartbeat;
+					json["d"] = m_LastSignal;
 
 					OnHeartbeat(time(nullptr));
 
-					msg.set_utf8_message(to_string(jsonMsg));
+					msg.set_utf8_message(to_string(json));
 					m_Client.send(msg);
 				} catch(std::exception &e) {
 					DPP_LOG_ERROR("[DiscordClient::ProcessTypeHello] {0}", e.what());
 				}
 			}
 		});
+
+		(*m_HeartbeatThreat).detach();
 
 		OnHello(m_HeartbeatInterval);
 	}
