@@ -81,6 +81,9 @@
     <ClInclude Include="Include\Entities\Message\DiscordEmoji.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Entities\Channel\EventArgs\ChannelCreateEventArgs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Discord\DiscordClient.cpp">
@@ -138,6 +141,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\Entities\Message\DiscordEmoji.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Entities\Channel\EventArgs\ChannelCreateEventArgs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

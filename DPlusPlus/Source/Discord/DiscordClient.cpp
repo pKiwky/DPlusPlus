@@ -10,7 +10,8 @@ namespace DPlusPlus {
 		{ "MESSAGE_UPDATE"	, new MessageUpdateEventArgs()	},
 		{ "MESSAGE_DELETE"	, new MessageDeleteEventArgs()	},
 		{ "GUILD_CREATE"	, new GuildCreateEventArgs()	},
-		{ "GUILD_UPDATE"	, new GuildUpdateEventArgs()	}
+		{ "GUILD_UPDATE"	, new GuildUpdateEventArgs()	},
+		{ "CHANNEL_CREATE"	, new ChannelCreateEventArgs()	},
 	};
 
 	DiscordClient::DiscordClient() {}

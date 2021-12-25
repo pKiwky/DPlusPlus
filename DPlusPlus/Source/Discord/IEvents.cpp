@@ -86,7 +86,7 @@ namespace DPlusPlus {
 
 	}
 
-	void IEvents::OnChannelCreate() {
+	void IEvents::OnChannelCreate(std::unique_ptr<const ChannelCreateEventArgs> args) {
 
 	}
 

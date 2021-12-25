@@ -3,11 +3,15 @@
 #include <iostream>
 
 #include "Entities/Common/EventArgs/ReadyEventArgs.h"
+
 #include "Entities/Message/EventArgs/MessageCreateEventArgs.h"
 #include "Entities/Message/EventArgs/MessageUpdateEventArgs.h"
 #include "Entities/Message/EventArgs/MessageDeleteEventArgs.h"
+
 #include "Entities/Guild/EventArgs/GuildCreateEventArgs.h"
 #include "Entities/Guild/EventArgs/GuildUpdateEventArgs.h"
+
+#include "Entities/Channel/EventArgs/ChannelCreateEventArgs.h"
 
 namespace DPlusPlus {
 
@@ -144,7 +148,7 @@ namespace DPlusPlus {
 		/**
 		 * Sent when a new guild channel is created, relevant to the current user. The inner payload is a channel object.
 		 */
-		virtual void OnChannelCreate();
+		virtual void OnChannelCreate(std::unique_ptr<const ChannelCreateEventArgs> args);
 
 		/**
 		 * Sent when a channel is updated. The inner payload is a channel object.

@@ -26,6 +26,23 @@ void Bot::OnMessageCreate(std::unique_ptr<const DPlusPlus::MessageCreateEventArg
 	}
 }
 
+void Bot::OnMessageUpdate(std::unique_ptr<const DPlusPlus::MessageUpdateEventArgs> args) {
+	if(args->OldMessage != nullptr) {
+		DPP_LOG_INFO("[Bot::OnMessageUpdate] Old content {0}", args->OldMessage->Content);
+	}
+	DPP_LOG_INFO("[Bot::OnMessageUpdate] Content {0}", args->Message->Content);
+}
+
+void Bot::OnMessageDelete(std::unique_ptr<const DPlusPlus::MessageDeleteEventArgs> args) {
+	if(args->Message != nullptr) {
+		DPP_LOG_INFO("[Bot::OnMessageDelete] Content {0}", args->Message->Content);
+	}
+}
+
 void Bot::OnGuildCreate(std::unique_ptr<const DPlusPlus::GuildCreateEventArgs> args) {
 	DPP_LOG_INFO("[Bot::OnGuildCreate]");
+}
+
+void Bot::OnGuildUpdate(std::unique_ptr<const DPlusPlus::GuildUpdateEventArgs> args) {
+	DPP_LOG_INFO("[Bot::OnGuildUpdate] Name {0}", args->Guild->Name);
 }

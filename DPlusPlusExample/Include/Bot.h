@@ -13,23 +13,20 @@ class Bot: public DPlusPlus::DiscordClient {
 
 public:
 	void OnHello(int32_t interval) override;
+	
 	void OnHeartbeat(time_t timestamp) override;
+	
 	void OnReady(std::unique_ptr<const DPlusPlus::ReadyEventArgs> args) override;
+	
 	void OnMessageCreate(std::unique_ptr<const DPlusPlus::MessageCreateEventArgs> args) override;
-	void OnMessageUpdate(std::unique_ptr<const DPlusPlus::MessageUpdateEventArgs> args) override {
-		if(args->OldMessage != nullptr) {
-			DPP_LOG_INFO("[Bot::OnMessageUpdate] Old content {0}", args->OldMessage->Content);
-		}
-		DPP_LOG_INFO("[Bot::OnMessageUpdate] Content {0}", args->Message->Content);
-	}
-	void OnMessageDelete(std::unique_ptr<const DPlusPlus::MessageDeleteEventArgs> args) override {
-		if(args->Message != nullptr) {
-			DPP_LOG_INFO("[Bot::OnMessageDelete] Content {0}", args->Message->Content);
-		}
-	}
+	void OnMessageUpdate(std::unique_ptr<const DPlusPlus::MessageUpdateEventArgs> args) override;
+	void OnMessageDelete(std::unique_ptr<const DPlusPlus::MessageDeleteEventArgs> args) override;
+	
 	void OnGuildCreate(std::unique_ptr<const DPlusPlus::GuildCreateEventArgs> args) override;
-	void OnGuildUpdate(std::unique_ptr<const DPlusPlus::GuildUpdateEventArgs> args) override {
-		DPP_LOG_INFO("[Bot::OnGuildUpdate] Name {0}", args->Guild->Name);
-	}
+	void OnGuildUpdate(std::unique_ptr<const DPlusPlus::GuildUpdateEventArgs> args) override;
 
+	void OnChannelCreate(std::unique_ptr<const DPlusPlus::ChannelCreateEventArgs> args) override {
+		DPP_LOG_INFO("[Bot::OnChannelCreate] Guild {0}", args->Guild->Name);
+		DPP_LOG_INFO("[Bot::OnChannelCreate] Channel {0}", args->Channel->Name);
+	}
 };
