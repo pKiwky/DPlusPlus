@@ -10,6 +10,8 @@ namespace DPlusPlus {
 		Channel = std::make_shared<DiscordChannel>(client, json);
 		Guild = client->Guilds.Get(Channel->GuildId);
 
+		Guild->Channels->Add(Channel->Id, *Channel);
+
 		auto args = std::make_unique<const ChannelCreateEventArgs>(*this);
 		std::thread(&DiscordClient::OnChannelCreate, client, std::move(args)).detach();
 	}
