@@ -98,7 +98,7 @@ namespace DPlusPlus {
 
 	}
 
-	void IEvents::OnChannelDelete() {
+	void IEvents::OnChannelDelete(std::unique_ptr<const ChannelDeleteEventArgs> args) {
 
 	}
 

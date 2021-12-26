@@ -146,6 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Include\Entities\Channel\EventArgs\ChannelDeleteEventArgs.h" />
     <ClInclude Include="Include\Entities\Channel\EventArgs\ChannelCreateEventArgs.h" />
     <ClInclude Include="Include\Entities\Message\DiscordEmoji.h" />
     <ClInclude Include="Include\Entities\Member\DiscordMember.h" />
@@ -171,6 +172,7 @@
     <ClInclude Include="Vendor\nlohmann\json.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Entities\Channel\EventArgs\ChannelDeleteEventArgs.cpp" />
     <ClCompile Include="Source\Entities\Channel\EventArgs\ChannelCreateEventArgs.cpp" />
     <ClCompile Include="Source\Entities\Message\DiscordEmoji.cpp" />
     <ClCompile Include="Source\Entities\Member\DiscordMember.cpp" />

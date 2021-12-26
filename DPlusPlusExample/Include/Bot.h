@@ -29,4 +29,9 @@ public:
 		DPP_LOG_INFO("[Bot::OnChannelCreate] Guild {0}", args->Guild->Name);
 		DPP_LOG_INFO("[Bot::OnChannelCreate] Channel {0}", args->Channel->Name);
 	}
+
+	void OnChannelDelete(std::unique_ptr<const DPlusPlus::ChannelDeleteEventArgs> args) override {
+		DPP_LOG_INFO("[Bot::OnChannelDelete] Guild {0}", args->Guild->Name);
+		DPP_LOG_INFO("[Bot::OnChannelDelete] Channel {0}", args->Channel->Name);
+	}
 };

@@ -12,6 +12,7 @@
 #include "Entities/Guild/EventArgs/GuildUpdateEventArgs.h"
 
 #include "Entities/Channel/EventArgs/ChannelCreateEventArgs.h"
+#include "Entities/Channel/EventArgs/ChannelDeleteEventArgs.h"
 
 namespace DPlusPlus {
 
@@ -163,7 +164,7 @@ namespace DPlusPlus {
 		/**
 		 * Sent when a channel relevant to the current user is deleted. The inner payload is a channel object.
 		 */
-		virtual void OnChannelDelete();
+		virtual void OnChannelDelete(std::unique_ptr<const ChannelDeleteEventArgs> args);
 
 		/**
 		 * Sent when a thread is created, relevant to the current user, or when the current user is added to a thread.
