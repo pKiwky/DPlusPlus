@@ -13,9 +13,7 @@ class Bot: public DPlusPlus::DiscordClient {
 
 public:
 	void OnHello(int32_t interval) override;
-	
 	void OnHeartbeat(time_t timestamp) override;
-	
 	void OnReady(std::unique_ptr<const DPlusPlus::ReadyEventArgs> args) override;
 	
 	void OnMessageCreate(std::unique_ptr<const DPlusPlus::MessageCreateEventArgs> args) override;
@@ -25,13 +23,7 @@ public:
 	void OnGuildCreate(std::unique_ptr<const DPlusPlus::GuildCreateEventArgs> args) override;
 	void OnGuildUpdate(std::unique_ptr<const DPlusPlus::GuildUpdateEventArgs> args) override;
 
-	void OnChannelCreate(std::unique_ptr<const DPlusPlus::ChannelCreateEventArgs> args) override {
-		DPP_LOG_INFO("[Bot::OnChannelCreate] Guild {0}", args->Guild->Name);
-		DPP_LOG_INFO("[Bot::OnChannelCreate] Channel {0}", args->Channel->Name);
-	}
-
-	void OnChannelDelete(std::unique_ptr<const DPlusPlus::ChannelDeleteEventArgs> args) override {
-		DPP_LOG_INFO("[Bot::OnChannelDelete] Guild {0}", args->Guild->Name);
-		DPP_LOG_INFO("[Bot::OnChannelDelete] Channel {0}", args->Channel->Name);
-	}
+	void OnChannelCreate(std::unique_ptr<const DPlusPlus::ChannelCreateEventArgs> args) override;
+	void OnChannelUpdate(std::unique_ptr<const DPlusPlus::ChannelUpdateEventArgs> args) override;
+	void OnChannelDelete(std::unique_ptr<const DPlusPlus::ChannelDeleteEventArgs> args) override;
 };

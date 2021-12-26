@@ -90,7 +90,7 @@ namespace DPlusPlus {
 
 	}
 
-	void IEvents::OnChannelUpdate() {
+	void IEvents::OnChannelUpdate(std::unique_ptr<const ChannelUpdateEventArgs> args) {
 
 	}
 

@@ -46,3 +46,18 @@ void Bot::OnGuildCreate(std::unique_ptr<const DPlusPlus::GuildCreateEventArgs> a
 void Bot::OnGuildUpdate(std::unique_ptr<const DPlusPlus::GuildUpdateEventArgs> args) {
 	DPP_LOG_INFO("[Bot::OnGuildUpdate] Name {0}", args->Guild->Name);
 }
+
+void Bot::OnChannelCreate(std::unique_ptr<const DPlusPlus::ChannelCreateEventArgs> args) {
+	DPP_LOG_INFO("[Bot::OnChannelCreate] Guild {0}", args->Guild->Name);
+	DPP_LOG_INFO("[Bot::OnChannelCreate] Channel {0}", args->Channel->Name);
+}
+
+void Bot::OnChannelUpdate(std::unique_ptr<const DPlusPlus::ChannelUpdateEventArgs> args) {
+	DPP_LOG_INFO("[Bot::OnChannelDelete] Guild {0}", args->Guild->Name);
+	DPP_LOG_INFO("[Bot::OnChannelDelete] Channel {0}", args->Channel->Name);
+}
+
+void Bot::OnChannelDelete(std::unique_ptr<const DPlusPlus::ChannelDeleteEventArgs> args) {
+	DPP_LOG_INFO("[Bot::OnChannelDelete] Guild {0}", args->Guild->Name);
+	DPP_LOG_INFO("[Bot::OnChannelDelete] Channel {0}", args->Channel->Name);
+}

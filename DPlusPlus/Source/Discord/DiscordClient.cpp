@@ -12,6 +12,7 @@ namespace DPlusPlus {
 		{ "GUILD_CREATE"	, new GuildCreateEventArgs()	},
 		{ "GUILD_UPDATE"	, new GuildUpdateEventArgs()	},
 		{ "CHANNEL_CREATE"	, new ChannelCreateEventArgs()	},
+		{ "CHANNEL_UPDATE"	, new ChannelUpdateEventArgs()	},
 		{ "CHANNEL_DELETE"	, new ChannelDeleteEventArgs()	},
 	};
 
