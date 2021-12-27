@@ -138,7 +138,7 @@ namespace DPlusPlus {
 
 	}
 
-	void IEvents::OnMessagereactionAdd() {
+	void IEvents::OnMessageReactionAdd() {
 
 	}
 

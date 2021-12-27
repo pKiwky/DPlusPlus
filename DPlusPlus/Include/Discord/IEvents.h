@@ -222,7 +222,7 @@ namespace DPlusPlus {
 		/**
 		 * Sent when a user adds a reaction to a message.
 		 */
-		virtual void OnMessagereactionAdd();
+		virtual void OnMessageReactionAdd();
 
 		/**
 		 * Sent when a user removes a reaction from a message.
