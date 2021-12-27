@@ -94,7 +94,7 @@ namespace DPlusPlus {
 
 	}
 
-	void IEvents::OnChannelUpdatePin() {
+	void IEvents::OnChannelPinUpdate(std::unique_ptr<const ChannelPinUpdateEventArgs> args) {
 
 	}
 

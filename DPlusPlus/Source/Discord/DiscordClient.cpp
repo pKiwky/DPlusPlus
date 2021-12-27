@@ -5,15 +5,16 @@
 namespace DPlusPlus {
 
 	const std::map<std::string, Event *> EventsMap = {
-		{ "READY"			, new ReadyEventArgs()			},
-		{ "MESSAGE_CREATE"	, new MessageCreateEventArgs()	},
-		{ "MESSAGE_UPDATE"	, new MessageUpdateEventArgs()	},
-		{ "MESSAGE_DELETE"	, new MessageDeleteEventArgs()	},
-		{ "GUILD_CREATE"	, new GuildCreateEventArgs()	},
-		{ "GUILD_UPDATE"	, new GuildUpdateEventArgs()	},
-		{ "CHANNEL_CREATE"	, new ChannelCreateEventArgs()	},
-		{ "CHANNEL_UPDATE"	, new ChannelUpdateEventArgs()	},
-		{ "CHANNEL_DELETE"	, new ChannelDeleteEventArgs()	},
+		{ "READY"				, new ReadyEventArgs()				},
+		{ "MESSAGE_CREATE"		, new MessageCreateEventArgs()		},
+		{ "MESSAGE_UPDATE"		, new MessageUpdateEventArgs()		},
+		{ "MESSAGE_DELETE"		, new MessageDeleteEventArgs()		},
+		{ "GUILD_CREATE"		, new GuildCreateEventArgs()		},
+		{ "GUILD_UPDATE"		, new GuildUpdateEventArgs()		},
+		{ "CHANNEL_CREATE"		, new ChannelCreateEventArgs()		},
+		{ "CHANNEL_UPDATE"		, new ChannelUpdateEventArgs()		},
+		{ "CHANNEL_DELETE"		, new ChannelDeleteEventArgs()		},
+		{ "CHANNEL_PINS_UPDATE"	, new ChannelPinUpdateEventArgs()	}
 	};
 
 	DiscordClient::DiscordClient() {}

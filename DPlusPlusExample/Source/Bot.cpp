@@ -61,3 +61,8 @@ void Bot::OnChannelDelete(std::unique_ptr<const DPlusPlus::ChannelDeleteEventArg
 	DPP_LOG_INFO("[Bot::OnChannelDelete] Guild {0}", args->Guild->Name);
 	DPP_LOG_INFO("[Bot::OnChannelDelete] Channel {0}", args->Channel->Name);
 }
+
+void Bot::OnChannelPinUpdate(std::unique_ptr<const DPlusPlus::ChannelPinUpdateEventArgs> args) {
+	DPP_LOG_INFO("[Bot::OnChannelPinUpdate] Guild {0}", args->Guild->Name);
+	DPP_LOG_INFO("[Bot::OnChannelPinUpdate] Channel {0}", args->Channel->Name);
+}

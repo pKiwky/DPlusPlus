@@ -146,6 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Include\Entities\Channel\EventArgs\ChannelPinUpdateEventArgs.h" />
     <ClInclude Include="Include\Entities\Channel\EventArgs\ChannelUpdateEventArgs.h" />
     <ClInclude Include="Include\Entities\Channel\EventArgs\ChannelDeleteEventArgs.h" />
     <ClInclude Include="Include\Entities\Channel\EventArgs\ChannelCreateEventArgs.h" />
@@ -173,6 +174,7 @@
     <ClInclude Include="Vendor\nlohmann\json.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Entities\Channel\EventArgs\ChannelPinUpdateEventArgs.cpp" />
     <ClCompile Include="Source\Entities\Channel\EventArgs\ChannelUpdateEventArgs.cpp" />
     <ClCompile Include="Source\Entities\Channel\EventArgs\ChannelDeleteEventArgs.cpp" />
     <ClCompile Include="Source\Entities\Channel\EventArgs\ChannelCreateEventArgs.cpp" />

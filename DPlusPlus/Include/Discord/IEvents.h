@@ -14,6 +14,7 @@
 #include "Entities/Channel/EventArgs/ChannelCreateEventArgs.h"
 #include "Entities/Channel/EventArgs/ChannelUpdateEventArgs.h"
 #include "Entities/Channel/EventArgs/ChannelDeleteEventArgs.h"
+#include "Entities/Channel/EventArgs/ChannelPinUpdateEventArgs.h"
 
 namespace DPlusPlus {
 
@@ -160,7 +161,7 @@ namespace DPlusPlus {
 		/**
 		 * Sent when a message is pinned or unpinned in a text channel. This is not sent when a pinned message is deleted.
 		 */
-		virtual void OnChannelUpdatePin();
+		virtual void OnChannelPinUpdate(std::unique_ptr<const ChannelPinUpdateEventArgs> args);
 
 		/**
 		 * Sent when a channel relevant to the current user is deleted. The inner payload is a channel object.
