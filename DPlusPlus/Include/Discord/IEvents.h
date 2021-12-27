@@ -10,6 +10,7 @@
 
 #include "Entities/Guild/EventArgs/GuildCreateEventArgs.h"
 #include "Entities/Guild/EventArgs/GuildUpdateEventArgs.h"
+#include "Entities/Guild/EventArgs/GuildRoleCreateEventArgs.h"
 
 #include "Entities/Channel/EventArgs/ChannelCreateEventArgs.h"
 #include "Entities/Channel/EventArgs/ChannelUpdateEventArgs.h"
@@ -136,7 +137,7 @@ namespace DPlusPlus {
 		/**
 		 * Sent when a guild role is created.
 		 */
-		virtual void OnGuildRoleCreate();
+		virtual void OnGuildRoleCreate(std::unique_ptr<const GuildRoleCreateEventArgs> args);
 
 		/**
 		 * Sent when a guild role is updated.
@@ -199,7 +200,7 @@ namespace DPlusPlus {
 
 		/**
 		 * Sent when a message is created. The inner payload is a message object.
-		 * 
+		 *
 		 * Note: Guild / Channel / Member may be null if message is dm.
 		 */
 		virtual void OnMessageCreate(std::unique_ptr<const MessageCreateEventArgs> args);

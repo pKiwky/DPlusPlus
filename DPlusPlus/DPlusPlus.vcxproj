@@ -146,6 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Include\Entities\Guild\EventArgs\GuildRoleCreateEventArgs.h" />
     <ClInclude Include="Include\Entities\Guild\DiscordRole.h" />
     <ClInclude Include="Include\Discord\DiscordIntents.h" />
     <ClInclude Include="Include\Entities\Channel\EventArgs\ChannelPinUpdateEventArgs.h" />
@@ -176,6 +177,7 @@
     <ClInclude Include="Vendor\nlohmann\json.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Entities\Guild\EventArgs\GuildRoleCreateEventArgs.cpp" />
     <ClCompile Include="Source\Entities\Guild\DiscordRole.cpp" />
     <ClCompile Include="Source\Discord\DiscordIntents.cpp" />
     <ClCompile Include="Source\Entities\Channel\EventArgs\ChannelPinUpdateEventArgs.cpp" />

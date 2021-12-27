@@ -7,6 +7,7 @@
 #include <Entities/Member/DiscordMember.h>
 #include <Entities/Message/DiscordMessage.h>
 #include <Entities/Guild/DiscordGuild.h>
+#include <Entities/Guild/DiscordRole.h>
 #include <Entities/Channel/DiscordChannel.h>
 
 class Bot: public DPlusPlus::DiscordClient {
@@ -22,6 +23,7 @@ public:
 
 	void OnGuildCreate(std::unique_ptr<const DPlusPlus::GuildCreateEventArgs> args) override;
 	void OnGuildUpdate(std::unique_ptr<const DPlusPlus::GuildUpdateEventArgs> args) override;
+	void OnGuildRoleCreate(std::unique_ptr<const DPlusPlus::GuildRoleCreateEventArgs> args) override;
 
 	void OnChannelCreate(std::unique_ptr<const DPlusPlus::ChannelCreateEventArgs> args) override;
 	void OnChannelUpdate(std::unique_ptr<const DPlusPlus::ChannelUpdateEventArgs> args) override;

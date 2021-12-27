@@ -74,7 +74,7 @@ namespace DPlusPlus {
 
 	}
 
-	void IEvents::OnGuildRoleCreate() {
+	void IEvents::OnGuildRoleCreate(std::unique_ptr<const GuildRoleCreateEventArgs> args) {
 
 	}
 
