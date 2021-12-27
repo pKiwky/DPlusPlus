@@ -4,6 +4,7 @@
 #include <cpprest/ws_client.h>
 
 #include "Discord/IEvents.h"
+#include "Discord/DiscordIntents.h"
 #include "Discord/Event.h"
 #include "Utils/Utility.h"
 #include "Utils/Cache.hpp"
@@ -41,9 +42,9 @@ namespace DPlusPlus {
 		 * Run new instance of this bot.
 		 *
 		 * @token		Your private bot token.
-		 * @TODO: Intents
+		 * @intents		Intents value.
 		 */
-		void Run(const std::string &token);
+		void Run(const std::string &token, uint32_t intents = (uint32_t)DiscordIntents::All());
 
 		/**
 		 * Set session string value from outside this object.
@@ -62,7 +63,7 @@ namespace DPlusPlus {
 		/**
 		 * Format identity json and send through WebSocket.
 		 */
-		void ProcessIdentity();
+		void ProcessIdentity(uint32_t intents);
 
 		/**
 		 * Process the main discord event: OnGuildCreate, OnMessageCreate ... all events.

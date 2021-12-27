@@ -19,7 +19,7 @@ namespace DPlusPlus {
 
 	DiscordClient::DiscordClient() {}
 
-	void DiscordClient::Run(const std::string &token) {
+	void DiscordClient::Run(const std::string &token, uint32_t intents /*= (uint32_t)DiscordIntents::All()*/) {
 		Logger::Inst()->Init();
 
 		boost::regex expr{"[a-zA-Z0-9_-]{24}.[a-zA-Z0-9_-]{6}.[a-zA-Z0-9_-]{27}"};
@@ -43,8 +43,8 @@ namespace DPlusPlus {
 		});
 
 		web::uri uri = web::uri(utility::conversions::to_string_t(DISCORD_GATEWAY_URL));
-		m_Client.connect(uri).then([&]() {
-			ProcessIdentity();
+		m_Client.connect(uri).then([&, intents]() {
+			ProcessIdentity(intents);
 		});
 	}
 
@@ -65,7 +65,7 @@ namespace DPlusPlus {
 		}
 	}
 
-	void DiscordClient::ProcessIdentity() {
+	void DiscordClient::ProcessIdentity(uint32_t intents) {
 		DPP_LOG_DEBUG("[DiscordClient::ProcessClientIdentity] Processing identity...");
 		websocket_outgoing_message message;
 		nJson json;
@@ -73,7 +73,7 @@ namespace DPlusPlus {
 		json["op"] = (int8_t)OPType::kIdentify;
 		json["d"] = {
 			{"token", m_Token},
-			{"intents", 513},
+			{"intents", intents},
 			{"properties", {
 				{"$os", "Windows"},
 				{"$browser", "DPlusPlus"},
