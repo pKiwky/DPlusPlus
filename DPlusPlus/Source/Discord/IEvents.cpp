@@ -78,7 +78,7 @@ namespace DPlusPlus {
 
 	}
 
-	void IEvents::OnGuildRoleUpdate() {
+	void IEvents::OnGuildRoleUpdate(std::unique_ptr<const GuildRoleUpdateEventArgs> args) {
 
 	}
 

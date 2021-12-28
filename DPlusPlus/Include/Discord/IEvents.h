@@ -11,6 +11,7 @@
 #include "Entities/Guild/EventArgs/GuildCreateEventArgs.h"
 #include "Entities/Guild/EventArgs/GuildUpdateEventArgs.h"
 #include "Entities/Guild/EventArgs/GuildRoleCreateEventArgs.h"
+#include "Entities/Guild/EventArgs/GuildRoleUpdateEventArgs.h"
 
 #include "Entities/Channel/EventArgs/ChannelCreateEventArgs.h"
 #include "Entities/Channel/EventArgs/ChannelUpdateEventArgs.h"
@@ -142,7 +143,7 @@ namespace DPlusPlus {
 		/**
 		 * Sent when a guild role is updated.
 		 */
-		virtual void OnGuildRoleUpdate();
+		virtual void OnGuildRoleUpdate(std::unique_ptr<const GuildRoleUpdateEventArgs> args);
 
 		/**
 		 * Sent when a guild role is deleted.
