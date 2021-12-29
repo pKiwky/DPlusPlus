@@ -146,6 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Include\Entities\Guild\EventArgs\GuildRoleDeleteEventArgs.h" />
     <ClInclude Include="Include\Entities\Guild\EventArgs\GuildRoleUpdateEventArgs.h" />
     <ClInclude Include="Include\Entities\Guild\EventArgs\GuildRoleCreateEventArgs.h" />
     <ClInclude Include="Include\Entities\Guild\DiscordRole.h" />
@@ -178,6 +179,7 @@
     <ClInclude Include="Vendor\nlohmann\json.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Entities\Guild\EventArgs\GuildRoleDeleteEventArgs.cpp" />
     <ClCompile Include="Source\Entities\Guild\EventArgs\GuildRoleUpdateEventArgs.cpp" />
     <ClCompile Include="Source\Entities\Guild\EventArgs\GuildRoleCreateEventArgs.cpp" />
     <ClCompile Include="Source\Entities\Guild\DiscordRole.cpp" />

@@ -82,7 +82,7 @@ namespace DPlusPlus {
 
 	}
 
-	void IEvents::OnGuildRoleDelete() {
+	void IEvents::OnGuildRoleDelete(std::unique_ptr<const GuildRoleDeleteEventArgs> args) {
 
 	}
 

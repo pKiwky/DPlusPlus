@@ -12,6 +12,7 @@
 #include "Entities/Guild/EventArgs/GuildUpdateEventArgs.h"
 #include "Entities/Guild/EventArgs/GuildRoleCreateEventArgs.h"
 #include "Entities/Guild/EventArgs/GuildRoleUpdateEventArgs.h"
+#include "Entities/Guild/EventArgs/GuildRoleDeleteEventArgs.h"
 
 #include "Entities/Channel/EventArgs/ChannelCreateEventArgs.h"
 #include "Entities/Channel/EventArgs/ChannelUpdateEventArgs.h"
@@ -148,7 +149,7 @@ namespace DPlusPlus {
 		/**
 		 * Sent when a guild role is deleted.
 		 */
-		virtual void OnGuildRoleDelete();
+		virtual void OnGuildRoleDelete(std::unique_ptr<const GuildRoleDeleteEventArgs> args);
 
 		/**
 		 * Sent when a new guild channel is created, relevant to the current user. The inner payload is a channel object.

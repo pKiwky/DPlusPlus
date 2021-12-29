@@ -10,6 +10,8 @@ namespace DPlusPlus {
 		Role = std::make_shared<DiscordRole>(client, json);
 		Guild = client->Guilds.Get(json["guild_id"]);
 
+		Guild->Roles->Add(Role->Id, *Role);
+
 		auto args = std::make_unique<const GuildRoleUpdateEventArgs>(*this);
 		std::thread(&DiscordClient::OnGuildRoleUpdate, client, std::move(args)).detach();
 	}

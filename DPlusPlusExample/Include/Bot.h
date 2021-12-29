@@ -28,6 +28,10 @@ public:
 		DPP_LOG_INFO("[Bot::OnGuildRoleUpdate] Guild {0}", args->Guild->Name);
 		DPP_LOG_INFO("[Bot::OnGuildRoleUpdate] Role {0}", args->Role->Name);
 	}
+	void OnGuildRoleDelete(std::unique_ptr<const DPlusPlus::GuildRoleDeleteEventArgs> args) override {
+		DPP_LOG_INFO("[Bot::OnGuildRoleDelete] Guild {0}", args->Guild->Name);
+		DPP_LOG_INFO("[Bot::OnGuildRoleDelete] Role {0}", args->Role->Name);
+	}
 
 	void OnChannelCreate(std::unique_ptr<const DPlusPlus::ChannelCreateEventArgs> args) override;
 	void OnChannelUpdate(std::unique_ptr<const DPlusPlus::ChannelUpdateEventArgs> args) override;
