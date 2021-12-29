@@ -1,6 +1,7 @@
 #include "Utils/Cache.hpp"
 
 #include "Entities/Guild/DiscordGuild.h"
+#include "Entities/Guild/DiscordRole.h"
 #include "Entities/Channel/DiscordChannel.h"
 #include "Entities/Message/DiscordMessage.h"
 #include "Entities/Member/DiscordMember.h"
@@ -10,6 +11,7 @@ namespace DPlusPlus {
 	template class Cache<DiscordGuild>;
 	template class Cache<DiscordChannel>;
 	template class Cache<DiscordMember>;
+	template class Cache<DiscordRole>;
 
 	template class CacheRing<DiscordMessage>;
 

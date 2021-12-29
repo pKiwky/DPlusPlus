@@ -47,6 +47,7 @@ namespace DPlusPlus {
 	class DiscordChannel;
 	class DiscordMessage;
 	class DiscordMember;
+	class DiscordRole;
 
 	class DiscordGuild: public DiscordEntity {
 
@@ -57,6 +58,7 @@ namespace DPlusPlus {
 	public:
 		Cache<DiscordChannel> *Channels = nullptr;
 		Cache<DiscordMember> *Members = nullptr;
+		Cache<DiscordRole> *Roles = nullptr;
 
 		CacheRing<DiscordMessage> *Messages = nullptr;
 

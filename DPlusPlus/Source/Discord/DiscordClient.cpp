@@ -25,7 +25,6 @@ namespace DPlusPlus {
 		Logger::Inst()->Init();
 
 		boost::regex expr{"[a-zA-Z0-9_-]{24}.[a-zA-Z0-9_-]{6}.[a-zA-Z0-9_-]{27}"};
-		//boost::regex expr{"[a-zA-Z0-9_-]{24}\.[a-zA-Z0-9_-]{6}\.[a-zA-Z0-9_-]{27}"};
 		if(boost::regex_match(token, expr) == false) {
 			DPP_LOG_ERROR("[DiscordClient::Run] Invalid bot token");
 			return;

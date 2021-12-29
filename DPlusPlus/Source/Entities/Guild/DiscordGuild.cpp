@@ -1,6 +1,7 @@
 #include "Entities/Guild/DiscordGuild.h"
 
 #include "Discord/DiscordClient.h"
+#include "Entities/Guild/DiscordRole.h"
 #include "Entities/Channel/DiscordChannel.h"
 
 namespace DPlusPlus {
@@ -49,11 +50,18 @@ namespace DPlusPlus {
 		// LEAK MEMORY ON UPDATE OLD GUILD.
 		Channels = new Cache<DiscordChannel>();
 		Members = new Cache<DiscordMember>();
+		Roles = new Cache<DiscordRole>();
 		Messages = new CacheRing<DiscordMessage>(DISCORD_MESSAGE_CACHE_SIZE);
 
 		if(json.contains("channels")) {
 			for(nJson channel : json["channels"]) {
 				Channels->Add(channel["id"], DiscordChannel(client, channel));
+			}
+		}
+
+		if(json.contains("roles")) {
+			for(nJson role : json["roles"]) {
+				Roles->Add(role["id"], DiscordRole(client, role));
 			}
 		}
 
