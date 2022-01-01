@@ -176,9 +176,11 @@
     <ClInclude Include="Include\Entities\Message\EventArgs\MessageCreateEventArgs.h" />
     <ClInclude Include="Include\Entities\Message\EventArgs\MessageDeleteEventArgs.h" />
     <ClInclude Include="Include\Entities\Message\EventArgs\MessageUpdateEventArgs.h" />
+    <ClInclude Include="Include\Entities\Message\EventArgs\MessageReactionAddEventArgs.h" />
     <ClInclude Include="Vendor\nlohmann\json.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Entities\Message\EventArgs\MessageReactionAddEventArgs.cpp" />
     <ClCompile Include="Source\Entities\Guild\EventArgs\GuildRoleDeleteEventArgs.cpp" />
     <ClCompile Include="Source\Entities\Guild\EventArgs\GuildRoleUpdateEventArgs.cpp" />
     <ClCompile Include="Source\Entities\Guild\EventArgs\GuildRoleCreateEventArgs.cpp" />

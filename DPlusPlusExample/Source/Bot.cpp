@@ -39,6 +39,11 @@ void Bot::OnMessageDelete(std::unique_ptr<const DPlusPlus::MessageDeleteEventArg
 	}
 }
 
+void Bot::OnMessageReactionAdd(std::unique_ptr<const DPlusPlus::MessageReactionAddEventArgs> args) {
+	DPP_LOG_INFO("[Bot::OnMessageReactionAdd] Guild {0}", args->Guild->Name);
+	DPP_LOG_INFO("[Bot::OnMessageReactionAdd] Member {0}", args->Member->Nick);
+}
+
 void Bot::OnGuildCreate(std::unique_ptr<const DPlusPlus::GuildCreateEventArgs> args) {
 	DPP_LOG_INFO("[Bot::OnGuildCreate]");
 }
@@ -50,6 +55,16 @@ void Bot::OnGuildUpdate(std::unique_ptr<const DPlusPlus::GuildUpdateEventArgs> a
 void Bot::OnGuildRoleCreate(std::unique_ptr<const DPlusPlus::GuildRoleCreateEventArgs> args) {
 	DPP_LOG_INFO("[Bot::OnGuildRoleCreate] Guild {0}", args->Guild->Name);
 	DPP_LOG_INFO("[Bot::OnGuildRoleCreate] Role {0}", args->Role->Name);
+}
+
+void Bot::OnGuildRoleUpdate(std::unique_ptr<const DPlusPlus::GuildRoleUpdateEventArgs> args) {
+	DPP_LOG_INFO("[Bot::OnGuildRoleUpdate] Guild {0}", args->Guild->Name);
+	DPP_LOG_INFO("[Bot::OnGuildRoleUpdate] Role {0}", args->Role->Name);
+}
+
+void Bot::OnGuildRoleDelete(std::unique_ptr<const DPlusPlus::GuildRoleDeleteEventArgs> args) {
+	DPP_LOG_INFO("[Bot::OnGuildRoleDelete] Guild {0}", args->Guild->Name);
+	DPP_LOG_INFO("[Bot::OnGuildRoleDelete] Role {0}", args->Role->Name);
 }
 
 void Bot::OnChannelCreate(std::unique_ptr<const DPlusPlus::ChannelCreateEventArgs> args) {

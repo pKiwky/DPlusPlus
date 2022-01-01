@@ -7,6 +7,7 @@
 #include "Entities/Message/EventArgs/MessageCreateEventArgs.h"
 #include "Entities/Message/EventArgs/MessageUpdateEventArgs.h"
 #include "Entities/Message/EventArgs/MessageDeleteEventArgs.h"
+#include "Entities/Message/EventArgs/MessageReactionAddEventArgs.h"
 
 #include "Entities/Guild/EventArgs/GuildCreateEventArgs.h"
 #include "Entities/Guild/EventArgs/GuildUpdateEventArgs.h"
@@ -225,7 +226,7 @@ namespace DPlusPlus {
 		/**
 		 * Sent when a user adds a reaction to a message.
 		 */
-		virtual void OnMessageReactionAdd();
+		virtual void OnMessageReactionAdd(std::unique_ptr<const MessageReactionAddEventArgs> args);
 
 		/**
 		 * Sent when a user removes a reaction from a message.

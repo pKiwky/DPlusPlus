@@ -9,6 +9,7 @@ namespace DPlusPlus {
 		{ "MESSAGE_CREATE",			new MessageCreateEventArgs()	},
 		{ "MESSAGE_UPDATE",			new MessageUpdateEventArgs()	},
 		{ "MESSAGE_DELETE",			new MessageDeleteEventArgs()	},
+		{ "MESSAGE_REACTION_ADD",	new MessageReactionAddEventArgs },
 		{ "GUILD_CREATE",			new GuildCreateEventArgs()		},
 		{ "GUILD_UPDATE",			new GuildUpdateEventArgs()		},
 		{ "GUILD_ROLE_CREATE",		new GuildRoleCreateEventArgs()	},
