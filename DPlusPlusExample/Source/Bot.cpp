@@ -42,6 +42,8 @@ void Bot::OnMessageDelete(std::unique_ptr<const DPlusPlus::MessageDeleteEventArg
 void Bot::OnMessageReactionAdd(std::unique_ptr<const DPlusPlus::MessageReactionAddEventArgs> args) {
 	DPP_LOG_INFO("[Bot::OnMessageReactionAdd] Guild {0}", args->Guild->Name);
 	DPP_LOG_INFO("[Bot::OnMessageReactionAdd] Member {0}", args->Member->Nick);
+	DPP_LOG_INFO("[Bot::OnMessageReactionAdd] Emoji {0}", args->Emoji->Name);
+	DPP_LOG_INFO("[Bot::OnMessageReactionAdd] Channel {0}", args->Channel->Name);
 }
 
 void Bot::OnGuildCreate(std::unique_ptr<const DPlusPlus::GuildCreateEventArgs> args) {

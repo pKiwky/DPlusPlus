@@ -9,6 +9,7 @@
 #include <Entities/Guild/DiscordGuild.h>
 #include <Entities/Guild/DiscordRole.h>
 #include <Entities/Channel/DiscordChannel.h>
+#include <Entities/Message/DiscordEmoji.h>
 
 class Bot: public DPlusPlus::DiscordClient {
 
