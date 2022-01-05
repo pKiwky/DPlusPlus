@@ -78,7 +78,7 @@ namespace DPlusPlus {
 			{"token", m_Token},
 			{"intents", intents},
 			{"properties", {
-				{"$os", "Windows"},
+				{"$os", GetOs()},
 				{"$browser", "DPlusPlus"},
 				{"$device", "DPlusPlus"},
 			}},
@@ -151,6 +151,14 @@ namespace DPlusPlus {
 			{"session_id", m_SessionId},
 			{"seq", m_LastSignal}
 		};
+	}
+
+	std::string DiscordClient::GetOs() {
+#ifdef _WIN32
+		return "Windows";
+#else
+		return "Linux";
+#endif
 	}
 
 }

@@ -111,6 +111,9 @@
     <ClInclude Include="Include\Entities\Message\EventArgs\MessageReactionAddEventArgs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Entities\Channel\DiscordInvite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Discord\DiscordClient.cpp">
@@ -198,6 +201,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\Entities\Message\EventArgs\MessageReactionAddEventArgs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Entities\Channel\DiscordInvite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

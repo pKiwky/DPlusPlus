@@ -84,6 +84,11 @@ namespace DPlusPlus {
 		 */
 		void ProcessTypeResume();
 
+		/**
+		 * Get os as a string.
+		 */
+		std::string GetOs();
+
 	public:
 		Cache<DiscordGuild> Guilds;
 
