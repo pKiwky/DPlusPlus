@@ -190,4 +190,8 @@ namespace DPlusPlus {
 
 	}
 
+	void IEvents::OnInviteCreate(std::unique_ptr<const InviteCreateEventArgs> args) {
+
+	}
+
 }

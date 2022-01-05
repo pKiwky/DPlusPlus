@@ -19,6 +19,7 @@
 #include "Entities/Channel/EventArgs/ChannelUpdateEventArgs.h"
 #include "Entities/Channel/EventArgs/ChannelDeleteEventArgs.h"
 #include "Entities/Channel/EventArgs/ChannelPinUpdateEventArgs.h"
+#include "Entities/Channel/EventArgs/InviteCreateEventArgs.h"
 
 namespace DPlusPlus {
 
@@ -288,6 +289,10 @@ namespace DPlusPlus {
 		 */
 		virtual void OnStageInstanceDelete();
 
+		/**
+		 * Sent when a new invite to a channel is created.
+		 */
+		virtual void OnInviteCreate(std::unique_ptr<const InviteCreateEventArgs> args);
 	};
 
 }

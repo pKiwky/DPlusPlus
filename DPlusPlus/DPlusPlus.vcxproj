@@ -178,9 +178,11 @@
     <ClInclude Include="Include\Entities\Message\EventArgs\MessageDeleteEventArgs.h" />
     <ClInclude Include="Include\Entities\Message\EventArgs\MessageUpdateEventArgs.h" />
     <ClInclude Include="Include\Entities\Message\EventArgs\MessageReactionAddEventArgs.h" />
+    <ClInclude Include="Include\Entities\Channel\EventArgs\InviteCreateEventArgs.h" />
     <ClInclude Include="Vendor\nlohmann\json.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Entities\Channel\EventArgs\InviteCreateEventArgs.cpp" />
     <ClCompile Include="Source\Entities\Channel\DiscordInvite.cpp" />
     <ClCompile Include="Source\Entities\Message\EventArgs\MessageReactionAddEventArgs.cpp" />
     <ClCompile Include="Source\Entities\Guild\EventArgs\GuildRoleDeleteEventArgs.cpp" />

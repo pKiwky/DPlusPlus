@@ -6,10 +6,11 @@
 #include <Entities/Member/DiscordUser.h>
 #include <Entities/Member/DiscordMember.h>
 #include <Entities/Message/DiscordMessage.h>
+#include <Entities/Message/DiscordEmoji.h>
 #include <Entities/Guild/DiscordGuild.h>
 #include <Entities/Guild/DiscordRole.h>
 #include <Entities/Channel/DiscordChannel.h>
-#include <Entities/Message/DiscordEmoji.h>
+#include <Entities/Channel/DiscordInvite.h>
 
 class Bot: public DPlusPlus::DiscordClient {
 
@@ -33,4 +34,6 @@ public:
 	void OnChannelUpdate(std::unique_ptr<const DPlusPlus::ChannelUpdateEventArgs> args) override;
 	void OnChannelDelete(std::unique_ptr<const DPlusPlus::ChannelDeleteEventArgs> args) override;
 	void OnChannelPinUpdate(std::unique_ptr<const DPlusPlus::ChannelPinUpdateEventArgs> args) override;
+
+	void OnInviteCreate(std::unique_ptr<const DPlusPlus::InviteCreateEventArgs> args);
 };

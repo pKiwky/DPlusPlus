@@ -88,3 +88,8 @@ void Bot::OnChannelPinUpdate(std::unique_ptr<const DPlusPlus::ChannelPinUpdateEv
 	DPP_LOG_INFO("[Bot::OnChannelPinUpdate] Guild {0}", args->Guild->Name);
 	DPP_LOG_INFO("[Bot::OnChannelPinUpdate] Channel {0}", args->Channel->Name);
 }
+
+void Bot::OnInviteCreate(std::unique_ptr<const DPlusPlus::InviteCreateEventArgs> args) {
+	DPP_LOG_INFO("[Bot::OnInviteCreate] Guild {0}", args->Guild->Name);
+	DPP_LOG_INFO("[Bot::OnInviteCreate] Code {0}", args->Invite->Code);
+}
