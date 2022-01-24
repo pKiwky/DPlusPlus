@@ -13,6 +13,14 @@ void Bot::OnReady(std::unique_ptr<const DPlusPlus::ReadyEventArgs> args) {
 	DPP_LOG_INFO("[Bot::OnReady] Session id {0}", args->SessionId);
 	DPP_LOG_INFO("[Bot::OnReady] Gateway version {0}", args->GatewayVersion);
 	DPP_LOG_INFO("[Bot::OnReady] Application id {0}", args->Application->Id);
+
+	std::thread([&] {
+		time_t start = time(nullptr);
+		while(true) {
+			UpdatePresence(DPlusPlus::PresenceType::kDnd, "Time " + std::to_string(start++));
+			Sleep(2500);
+		}
+	}).detach();
 }
 
 void Bot::OnMessageCreate(std::unique_ptr<const DPlusPlus::MessageCreateEventArgs> args) {

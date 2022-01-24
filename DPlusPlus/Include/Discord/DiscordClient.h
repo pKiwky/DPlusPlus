@@ -32,6 +32,14 @@ namespace DPlusPlus {
 		kHeartbeatAck		/**/ = 11
 	};
 
+	enum class PresenceType {
+		kOnline		/**/ = 0,
+		kDnd		/**/ = 1,
+		kIdle		/**/ = 2,
+		kInvisible	/**/ = 3,
+		kOffline	/**/ = 4
+	};
+
 	class DiscordClient: public IEvents {
 
 	public:
@@ -45,6 +53,8 @@ namespace DPlusPlus {
 		 * @intents		Intents value.
 		 */
 		void Run(const std::string &token, uint32_t intents = (uint32_t)DiscordIntents::All());
+
+		void UpdatePresence(PresenceType presence, const std::string &name);
 
 		/**
 		 * Set session string value from outside this object.
@@ -88,6 +98,11 @@ namespace DPlusPlus {
 		 * Get os as a string.
 		 */
 		std::string GetOs();
+
+		/**
+		 * Get string from presence value.
+		 */
+		std::string GetPresenceString(PresenceType presence);
 
 	public:
 		Cache<DiscordGuild> Guilds;

@@ -52,6 +52,25 @@ namespace DPlusPlus {
 		});
 	}
 
+	void DiscordClient::UpdatePresence(PresenceType presence, const std::string &name) {
+		websocket_outgoing_message message;
+		nJson json;
+
+		json["op"] = (int8_t)OPType::kStatusUpdate;
+		json["d"] = {
+			{"since", 91879201},
+			{"activities", {{
+				{"name", name},
+				{"type", 0},
+			}}},
+			{"status", GetPresenceString(presence)},
+			{"afk", false},
+		};
+
+		message.set_utf8_message(to_string(json));
+		m_Client.send(message);
+	}
+
 	void DiscordClient::SetSession(const std::string &session) {
 		m_SessionId = session;
 	}
@@ -160,6 +179,17 @@ namespace DPlusPlus {
 #else
 		return "Linux";
 #endif
+	}
+
+	std::string DiscordClient::GetPresenceString(PresenceType presence) {
+		switch(presence) {
+			case PresenceType::kOnline:		return "online";
+			case PresenceType::kDnd:		return "dnd";
+			case PresenceType::kIdle:		return "idle";
+			case PresenceType::kInvisible:	return "invisible";
+			case PresenceType::kOffline:	return "offline";
+		}
+		return "";
 	}
 
 }
