@@ -154,7 +154,7 @@ namespace DPlusPlus {
 
 	}
 
-	void IEvents::OnPresenceUpdate() {
+	void IEvents::OnPresenceUpdate(std::unique_ptr<const PresenceUpdateEventArgs> args) {
 
 	}
 

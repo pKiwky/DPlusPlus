@@ -20,7 +20,8 @@ namespace DPlusPlus {
 		{ "CHANNEL_CREATE",			new ChannelCreateEventArgs()	},
 		{ "CHANNEL_UPDATE",			new ChannelUpdateEventArgs()	},
 		{ "CHANNEL_DELETE",			new ChannelDeleteEventArgs()	},
-		{ "CHANNEL_PINS_UPDATE",	new ChannelPinUpdateEventArgs()	}
+		{ "CHANNEL_PINS_UPDATE",	new ChannelPinUpdateEventArgs()	},
+		{ "PRESENCE_UPDATE",		new PresenceUpdateEventArgs()	}
 	};
 
 	DiscordClient::DiscordClient() {}

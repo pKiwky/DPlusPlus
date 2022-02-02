@@ -180,9 +180,11 @@
     <ClInclude Include="Include\Entities\Message\EventArgs\MessageUpdateEventArgs.h" />
     <ClInclude Include="Include\Entities\Message\EventArgs\MessageReactionAddEventArgs.h" />
     <ClInclude Include="Include\Entities\Channel\EventArgs\InviteCreateEventArgs.h" />
+    <ClInclude Include="Include\Entities\Member\EventArgs\PresenceUpdateEventArgs.h" />
     <ClInclude Include="Vendor\nlohmann\json.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Entities\Member\EventArgs\PresenceUpdateEventArgs.cpp" />
     <ClCompile Include="Source\Entities\Guild\EventArgs\GuildEmojiUpdateEventArgs.cpp" />
     <ClCompile Include="Source\Entities\Channel\EventArgs\InviteCreateEventArgs.cpp" />
     <ClCompile Include="Source\Entities\Channel\DiscordInvite.cpp" />

@@ -19,6 +19,8 @@ public:
 	void OnHeartbeat(time_t timestamp) override;
 	void OnReady(std::unique_ptr<const DPlusPlus::ReadyEventArgs> args) override;
 
+	void OnPresenceUpdate(std::unique_ptr<const DPlusPlus::PresenceUpdateEventArgs> args) override;
+
 	void OnMessageCreate(std::unique_ptr<const DPlusPlus::MessageCreateEventArgs> args) override;
 	void OnMessageUpdate(std::unique_ptr<const DPlusPlus::MessageUpdateEventArgs> args) override;
 	void OnMessageDelete(std::unique_ptr<const DPlusPlus::MessageDeleteEventArgs> args) override;
@@ -29,15 +31,12 @@ public:
 	void OnGuildRoleCreate(std::unique_ptr<const DPlusPlus::GuildRoleCreateEventArgs> args) override;
 	void OnGuildRoleUpdate(std::unique_ptr<const DPlusPlus::GuildRoleUpdateEventArgs> args) override;
 	void OnGuildRoleDelete(std::unique_ptr<const DPlusPlus::GuildRoleDeleteEventArgs> args) override;
-	void OnGuildEmojiUpdate(std::unique_ptr<const DPlusPlus::GuildEmojiUpdateEventArgs> args) override {
-		DPP_LOG_INFO("[Bot::OnGuildEmojiUpdate] Guild {0}", args->Guild->Name);
-		DPP_LOG_INFO("[Bot::OnGuildEmojiUpdate] Emoji {0}", args->Emojis[0]->Name);
-	}
+	void OnGuildEmojiUpdate(std::unique_ptr<const DPlusPlus::GuildEmojiUpdateEventArgs> args) override;
 
 	void OnChannelCreate(std::unique_ptr<const DPlusPlus::ChannelCreateEventArgs> args) override;
 	void OnChannelUpdate(std::unique_ptr<const DPlusPlus::ChannelUpdateEventArgs> args) override;
 	void OnChannelDelete(std::unique_ptr<const DPlusPlus::ChannelDeleteEventArgs> args) override;
 	void OnChannelPinUpdate(std::unique_ptr<const DPlusPlus::ChannelPinUpdateEventArgs> args) override;
 
-	void OnInviteCreate(std::unique_ptr<const DPlusPlus::InviteCreateEventArgs> args);
+	void OnInviteCreate(std::unique_ptr<const DPlusPlus::InviteCreateEventArgs> args) override;
 };

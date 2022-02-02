@@ -16,18 +16,24 @@ void Bot::OnReady(std::unique_ptr<const DPlusPlus::ReadyEventArgs> args) {
 
 	std::thread([&] {
 		time_t start = time(nullptr);
-		while(true) {
+		while (true) {
 			UpdatePresence(DPlusPlus::PresenceType::kDnd, "Time " + std::to_string(start++));
 			Sleep(2500);
 		}
 	}).detach();
 }
 
+void Bot::OnPresenceUpdate(std::unique_ptr<const DPlusPlus::PresenceUpdateEventArgs> args) {
+	DPP_LOG_INFO("[Bot::OnPresenceUpdate] Guild {0}", args->Guild->Name);
+	DPP_LOG_INFO("[Bot::OnPresenceUpdate] Member {0} [{1}]", args->User->Username, args->User->Id);
+	DPP_LOG_INFO("[Bot::OnPresenceUpdate] Status {0}", args->Status);
+}
+
 void Bot::OnMessageCreate(std::unique_ptr<const DPlusPlus::MessageCreateEventArgs> args) {
 	DPP_LOG_INFO("[Bot::OnMessageCreate] User {0}", args->Message->User->Username);
 	DPP_LOG_INFO("[Bot::OnMessageCreate] Content {0}", args->Message->Content);
 
-	if(args->Guild != nullptr) {
+	if (args->Guild != nullptr) {
 		DPP_LOG_INFO("[Bot::OnMessageCreate] Guild {0}", args->Guild->Name);
 		DPP_LOG_INFO("[Bot::OnMessageCreate] Channel {0}", args->Channel->Name);
 		DPP_LOG_INFO("[Bot::OnMessageCreate] Member {0}", args->Member->Nick);
@@ -35,14 +41,14 @@ void Bot::OnMessageCreate(std::unique_ptr<const DPlusPlus::MessageCreateEventArg
 }
 
 void Bot::OnMessageUpdate(std::unique_ptr<const DPlusPlus::MessageUpdateEventArgs> args) {
-	if(args->OldMessage != nullptr) {
+	if (args->OldMessage != nullptr) {
 		DPP_LOG_INFO("[Bot::OnMessageUpdate] Old content {0}", args->OldMessage->Content);
 	}
 	DPP_LOG_INFO("[Bot::OnMessageUpdate] Content {0}", args->Message->Content);
 }
 
 void Bot::OnMessageDelete(std::unique_ptr<const DPlusPlus::MessageDeleteEventArgs> args) {
-	if(args->Message != nullptr) {
+	if (args->Message != nullptr) {
 		DPP_LOG_INFO("[Bot::OnMessageDelete] Content {0}", args->Message->Content);
 	}
 }
@@ -75,6 +81,11 @@ void Bot::OnGuildRoleUpdate(std::unique_ptr<const DPlusPlus::GuildRoleUpdateEven
 void Bot::OnGuildRoleDelete(std::unique_ptr<const DPlusPlus::GuildRoleDeleteEventArgs> args) {
 	DPP_LOG_INFO("[Bot::OnGuildRoleDelete] Guild {0}", args->Guild->Name);
 	DPP_LOG_INFO("[Bot::OnGuildRoleDelete] Role {0}", args->Role->Name);
+}
+
+void Bot::OnGuildEmojiUpdate(std::unique_ptr<const DPlusPlus::GuildEmojiUpdateEventArgs> args) {
+	DPP_LOG_INFO("[Bot::OnGuildEmojiUpdate] Guild {0}", args->Guild->Name);
+	DPP_LOG_INFO("[Bot::OnGuildEmojiUpdate] Emoji {0}", args->Emojis[0]->Name);
 }
 
 void Bot::OnChannelCreate(std::unique_ptr<const DPlusPlus::ChannelCreateEventArgs> args) {

@@ -4,6 +4,8 @@
 
 #include "Entities/Common/EventArgs/ReadyEventArgs.h"
 
+#include "Entities/Member/EventArgs/PresenceUpdateEventArgs.h"
+
 #include "Entities/Message/EventArgs/MessageCreateEventArgs.h"
 #include "Entities/Message/EventArgs/MessageUpdateEventArgs.h"
 #include "Entities/Message/EventArgs/MessageDeleteEventArgs.h"
@@ -248,7 +250,7 @@ namespace DPlusPlus {
 		/**
 		 * A user's presence is their current state on a guild. This event is sent when a user's presence or info, such as name or avatar, is updated.
 		 */
-		virtual void OnPresenceUpdate();
+		virtual void OnPresenceUpdate(std::unique_ptr<const PresenceUpdateEventArgs> args);
 
 		/**
 		 * Sent when properties about the user change. Inner payload is a user object.
