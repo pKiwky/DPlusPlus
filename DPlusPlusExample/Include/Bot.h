@@ -29,6 +29,10 @@ public:
 	void OnGuildRoleCreate(std::unique_ptr<const DPlusPlus::GuildRoleCreateEventArgs> args) override;
 	void OnGuildRoleUpdate(std::unique_ptr<const DPlusPlus::GuildRoleUpdateEventArgs> args) override;
 	void OnGuildRoleDelete(std::unique_ptr<const DPlusPlus::GuildRoleDeleteEventArgs> args) override;
+	void OnGuildEmojiUpdate(std::unique_ptr<const DPlusPlus::GuildEmojiUpdateEventArgs> args) override {
+		DPP_LOG_INFO("[Bot::OnGuildEmojiUpdate] Guild {0}", args->Guild->Name);
+		DPP_LOG_INFO("[Bot::OnGuildEmojiUpdate] Emoji {0}", args->Emojis[0]->Name);
+	}
 
 	void OnChannelCreate(std::unique_ptr<const DPlusPlus::ChannelCreateEventArgs> args) override;
 	void OnChannelUpdate(std::unique_ptr<const DPlusPlus::ChannelUpdateEventArgs> args) override;

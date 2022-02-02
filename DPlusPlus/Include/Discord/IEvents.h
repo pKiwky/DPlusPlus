@@ -14,6 +14,7 @@
 #include "Entities/Guild/EventArgs/GuildRoleCreateEventArgs.h"
 #include "Entities/Guild/EventArgs/GuildRoleUpdateEventArgs.h"
 #include "Entities/Guild/EventArgs/GuildRoleDeleteEventArgs.h"
+#include "Entities/Guild/EventArgs/GuildEmojiUpdateEventArgs.h"
 
 #include "Entities/Channel/EventArgs/ChannelCreateEventArgs.h"
 #include "Entities/Channel/EventArgs/ChannelUpdateEventArgs.h"
@@ -96,7 +97,7 @@ namespace DPlusPlus {
 		/**
 		 * Sent when a guild's emojis have been updated.
 		 */
-		virtual void OnGuildEmojiUpdate();
+		virtual void OnGuildEmojiUpdate(std::unique_ptr<const GuildEmojiUpdateEventArgs> args);
 
 		/**
 		 * Sent when a guild's stickers have been updated.

@@ -146,6 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Include\Entities\Guild\EventArgs\GuildEmojiUpdateEventArgs.h" />
     <ClInclude Include="Include\Entities\Channel\DiscordInvite.h" />
     <ClInclude Include="Include\Entities\Guild\EventArgs\GuildRoleDeleteEventArgs.h" />
     <ClInclude Include="Include\Entities\Guild\EventArgs\GuildRoleUpdateEventArgs.h" />
@@ -182,6 +183,7 @@
     <ClInclude Include="Vendor\nlohmann\json.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Entities\Guild\EventArgs\GuildEmojiUpdateEventArgs.cpp" />
     <ClCompile Include="Source\Entities\Channel\EventArgs\InviteCreateEventArgs.cpp" />
     <ClCompile Include="Source\Entities\Channel\DiscordInvite.cpp" />
     <ClCompile Include="Source\Entities\Message\EventArgs\MessageReactionAddEventArgs.cpp" />

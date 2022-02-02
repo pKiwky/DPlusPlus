@@ -38,7 +38,7 @@ namespace DPlusPlus {
 
 	}
 
-	void IEvents::OnGuildEmojiUpdate() {
+	void IEvents::OnGuildEmojiUpdate(std::unique_ptr<const GuildEmojiUpdateEventArgs> args) {
 
 	}
 
