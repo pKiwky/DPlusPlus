@@ -21,6 +21,7 @@ namespace DPlusPlus {
 		{ "CHANNEL_UPDATE",			new ChannelUpdateEventArgs()	},
 		{ "CHANNEL_DELETE",			new ChannelDeleteEventArgs()	},
 		{ "CHANNEL_PINS_UPDATE",	new ChannelPinUpdateEventArgs()	},
+		{ "THREAD_CREATE",			new ThreadCreateEventArgs()		},
 		{ "PRESENCE_UPDATE",		new PresenceUpdateEventArgs()	}
 	};
 
@@ -78,7 +79,7 @@ namespace DPlusPlus {
 	}
 
 	void DiscordClient::ProccesResponse(websocket_incoming_message message) {
-		DPP_LOG_DEBUG("[DiscordClient::ProccesResponse] Received new message");
+		//DPP_LOG_DEBUG("[DiscordClient::ProccesResponse] Received new message");
 
 		nJson json = nJson::parse(message.extract_string().get());
 		int8_t op = json["op"];
@@ -115,6 +116,8 @@ namespace DPlusPlus {
 	void DiscordClient::ProcessTypeDispatch(const nJson &json) {
 		const std::string type = json["t"];
 		m_LastSignal = json["s"];
+
+		DPP_LOG_ERROR("Event {0}", type);
 
 		auto it = EventsMap.find(type);
 		if(it != EventsMap.end()) {

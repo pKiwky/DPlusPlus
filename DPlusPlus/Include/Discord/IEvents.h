@@ -23,6 +23,7 @@
 #include "Entities/Channel/EventArgs/ChannelDeleteEventArgs.h"
 #include "Entities/Channel/EventArgs/ChannelPinUpdateEventArgs.h"
 #include "Entities/Channel/EventArgs/InviteCreateEventArgs.h"
+#include "Entities/Channel/EventArgs/ThreadCreateEventArgs.h"
 
 namespace DPlusPlus {
 
@@ -181,7 +182,7 @@ namespace DPlusPlus {
 		 * The inner payload is a channel object.
 		 * When being added to an existing private thread, includes a thread member object.
 		 */
-		virtual void OnThreadCreate();
+		virtual void OnThreadCreate(std::unique_ptr<const ThreadCreateEventArgs> args);
 
 		/**
 		 * Sent when a thread is updated. The inner payload is a channel object.

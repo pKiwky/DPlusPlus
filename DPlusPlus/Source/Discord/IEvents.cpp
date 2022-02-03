@@ -102,7 +102,7 @@ namespace DPlusPlus {
 
 	}
 
-	void IEvents::OnThreadCreate() {
+	void IEvents::OnThreadCreate(std::unique_ptr<const ThreadCreateEventArgs> args) {
 
 	}
 

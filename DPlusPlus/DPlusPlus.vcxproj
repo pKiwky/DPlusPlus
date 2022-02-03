@@ -181,6 +181,7 @@
     <ClInclude Include="Include\Entities\Message\EventArgs\MessageReactionAddEventArgs.h" />
     <ClInclude Include="Include\Entities\Channel\EventArgs\InviteCreateEventArgs.h" />
     <ClInclude Include="Include\Entities\Member\EventArgs\PresenceUpdateEventArgs.h" />
+    <ClInclude Include="Include\Entities\Channel\EventArgs\ThreadCreateEventArgs.h" />
     <ClInclude Include="Vendor\nlohmann\json.hpp" />
   </ItemGroup>
   <ItemGroup>
@@ -217,6 +218,7 @@
     <ClCompile Include="Source\Discord\DiscordClient.cpp" />
     <ClCompile Include="Source\Utils\Logger.cpp" />
     <ClCompile Include="Source\Utils\Utility.cpp" />
+    <ClCompile Include="Source\Entities\Channel\EventArgs\ThreadCreateEventArgs.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

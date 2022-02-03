@@ -38,5 +38,7 @@ public:
 	void OnChannelDelete(std::unique_ptr<const DPlusPlus::ChannelDeleteEventArgs> args) override;
 	void OnChannelPinUpdate(std::unique_ptr<const DPlusPlus::ChannelPinUpdateEventArgs> args) override;
 
+	void OnThreadCreate(std::unique_ptr<const DPlusPlus::ThreadCreateEventArgs> args) override;
+
 	void OnInviteCreate(std::unique_ptr<const DPlusPlus::InviteCreateEventArgs> args) override;
 };
